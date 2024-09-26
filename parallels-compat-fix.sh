@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 DaemonDir=~/Library/LaunchAgents
 DaemonName=com.parallels.compatfix
@@ -18,10 +18,9 @@ cat > $Daemonfile << EOF
         <string>com.parallels.compatfix</string>
         <key>ProgramArguments</key>
         <array>
-            <string>bash</string>
+            <string>sh</string>
             <string>-c</string>
-            <string>sleep 5
-launchctl setenv SYSTEM_VERSION_COMPAT 1</string>
+            <string>launchctl setenv SYSTEM_VERSION_COMPAT 1</string>
         </array>
     </dict>
 </plist>
