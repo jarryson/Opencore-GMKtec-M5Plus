@@ -21,6 +21,7 @@ Monterey 12.7.6
 | Sleep/Wake       | ✅                    |
 | USB Ports        | ✅                    |
 | Wired Ethernet   | ✅                    |
+| Headphone jack   | ✅                    |
 | HDMI Audio       | ✅                    |
 | HDMI Video       | ✅                    |
 | DP               | ❌                    | 
@@ -36,7 +37,7 @@ Note: DP port works only if hdmi plugged in and boot finished. It seems to be a 
 2. You can choose SMCAMDProcessor.kext instead of SMCProcessorAMD.kext, but SMCProcessorAMD is more stable and simple.
 3. Chrome fix by running `open /Applications/Chrome.app --args --disable-gpu`, and in `chrome://flags`, disable `#enable-gpu-rasterization` and choose opengl `#use-angle` flags. And chrome seems usable.
 4. Use GLFriend app to open chrome like apps is another option.
-5. Virtualization you can use Parallels 13.1, need `SYSTEM_VERSION_COMPAT=1` environment variable. You can run `parallels-compat-fix.sh` which will add it use launchctl.
+5. Virtualization you can use Parallels 13.1, need `SYSTEM_VERSION_COMPAT=1` environment variable. ~~You can run `parallels-compat-fix.sh` which will add it use launchctl.~~ You can use [this launcher](https://github.com/mikigal/ryzen-hackintosh/blob/master/Resources/Parallels%20Desktop%20Launcher.app.zip).
 6. Adobe software like Photoshop has intel_fast_memset issue, you can fix it by running [adobe_patch](https://github.com/mikigal/ryzen-hackintosh/blob/master/Resources/adobe_patch.sh). Older versions of Adobe software (e. g. up to 22.3.1 for Photoshop) need it's [legacy version](https://github.com/mikigal/ryzen-hackintosh/blob/master/Resources/adobe_patch_legacy.sh). For details about Adobe patching check thead on [macos86.it](https://www.macos86.it/topic/4822-photoshop-after-effects-cc-2021-premiere-pro-cc-2021-154-amd-hackintosh-fix/).
 7. Some applications for macOS use MKL - Math Kernel Library. Unfortunately, it does not work on AMD CPUs natively - we need to patch it with [this script](https://github.com/mikigal/ryzen-hackintosh/blob/master/Resources/ryzen_patch.sh).
 8. Fix sleep follow [opencore guide](https://dortania.github.io/OpenCore-Post-Install/universal/sleep.html)
