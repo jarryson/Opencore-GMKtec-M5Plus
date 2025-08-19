@@ -1,0 +1,1111 @@
+#!/bin/bash
+# vim:ts=4:sw=4:noexpandtab
+#
+# Parallels Desktop bootstrap.
+#
+# Copyright (c) 2004-2014 Parallels International GmbH.
+# All rights reserved.
+# http://www.parallels.com
+
+
+export PATH=/bin:/sbin:/usr/bin:/usr/sbin
+
+ECHO=/bin/echo
+
+SCRIPT_NAME="$(basename "$0")"
+LOG_TAG="pdfm-bootstrap"
+LOGGER_NAME="${SCRIPT_NAME}[$$]:"
+
+INFO_STATES=("STATE_INIT" "STATE_UNINSTALL")
+INFO_STATES_COUNT=${#INFO_STATES[@]}
+INFO_CURRENT_PROGRESS=0
+
+RC_OK=0
+RC_BROKEN_INSTALLATION=1
+RC_SUPERUSER_REQ=2
+RC_INCORRECT_CL=3
+RC_UNEXISTENT_PATH=4
+RC_BROKEN_PT_CONVERT=5
+RC_BROKEN_UNINSTALLATION=6
+RC_BROKEN_PUFS_INSTALLATION=7 # unused
+RC_BROKEN_SYS=8
+RC_NO_DISK_SPACE=9
+RC_UID0_DUPS=10
+RC_NEED_REBOOT=11
+
+NEED_REBOOT=
+RC="${RC_OK}"
+
+DEFAULT_OWNER="root"
+DEFAULT_GROUP="wheel"
+DEFAULT_FILE_PERMISSIONS="0644"
+DEFAULT_DIR_PERMISSIONS="0755"
+
+COL_PATH=0
+COL_OWNER=1
+COL_GROUP=2
+COL_PERM=3
+COLUMNS=("${COL_PATH}" "${COL_OWNER}" "${COL_GROUP}" "${COL_PERM}")
+
+VERSION=
+ACTION=
+BUNDLE_PATH="$(cd "`dirname "${0}"`/../../" && pwd)"
+EXCEPTIONS_FILE_PATH="${BUNDLE_PATH}/Contents/Resources/exceptions.list"
+PRL_PREFS_DIR='/Library/Preferences/Parallels'
+BUNDLE_LOCATION_FILE="${PRL_PREFS_DIR}/parallels-desktop.loc"
+ACTIVATION_TOKEN_FILE="${PRL_PREFS_DIR}/parallels-desktop-activation.token"
+VENDOR_INFO_FILE="${PRL_PREFS_DIR}/parallels-desktop-vendor.info"
+TARGET_PATH=""
+START_SERVICES=""
+
+HEADLESS_MODE=""
+LAUNCHD_SETUP_REL_PATH="Contents/MacOS/launchd_setup"
+
+USERS=()
+
+USAGE="Usage: ${SCRIPT_NAME} -h
+       ${SCRIPT_NAME} ACTION [OPTIONS]
+Possible actions:
+	init                     Set permissions and owners for new installation or update
+	check                    Check permissions and owners
+	check_prev_installation  Check previous installations (versions <=7.0)
+	check_disk_space         Check if there's enough disk space for installation.
+	                         Target installation path must be set via -t option.
+	install                  Copy bundle to a target location
+
+Possible options:
+	-h		This screen
+	-e		Path to the file with exceptions
+	-b		Path to the bundle
+	-t		Path to the target location
+	-s		Start services after installation"
+
+
+# Update progress information
+# $1 - progress increment
+# $2 - current state
+update_progress()
+{
+	[ -n "$1" ] && INFO_CURRENT_PROGRESS=$(($INFO_CURRENT_PROGRESS+$1))
+	[ -n "$2" ] && echo "INIT_STATE: $2"
+	echo "INIT_PROGRESS: $INFO_CURRENT_PROGRESS"
+}
+
+# Log to syslog and stderr
+# usage: log <error|warning|debug> "MESSAGE"
+log() {
+	local level=$1
+	shift
+	case "${level}" in
+		error)
+			logger -t "${LOG_TAG}" -p install.error -s "${LOGGER_NAME} $@"
+			;;
+
+		warning)
+			logger -t "${LOG_TAG}" -p install.warning -s "${LOGGER_NAME} $@"
+			;;
+
+		info)
+			logger -t "${LOG_TAG}" -p install.info -s "${LOGGER_NAME} $@"
+			;;
+
+		debug)
+			[ "$_DEBUG" == "true" ] && logger -t "${LOG_TAG}" -p install.debug -s "${LOGGER_NAME} $@"
+			;;
+
+		*)
+			logger -t "${LOG_TAG}" -p install.info -s "${LOGGER_NAME} ${level} $@"
+			;;
+	esac
+}
+
+
+check_superuser() {
+	test $(id -u) -eq 0
+}
+
+check_superuser_or_exit() {
+	if ! check_superuser; then
+		log error "Superuser rights required"
+		exit "${RC_SUPERUSER_REQ}"
+	fi
+}
+
+init_users() {
+	local lsusers_out
+	lsusers_out=`"${BUNDLE_PATH}/Contents/MacOS/prl_ls_users"`
+
+	if [ $? -ne 0 ]; then
+		# Fallback to the previous logic
+		log warning 'prl_ls_users exited with error'
+		for usr in `ls -1 /Users/ | grep -ivw Shared | grep -ve '^\\.'`; do
+			[ -d "/Users/$usr" ] || continue
+			id "$usr" >/dev/null 2>&1 || continue
+			USERS+=("${usr} /Users/${usr}")
+		done
+		return
+	fi
+
+	IFS=$'\n'
+	for i in $lsusers_out; do
+		[ -d "/${i#* /}" ] || continue
+		USERS+=("$i")
+	done
+	unset IFS
+}
+
+# Returns list of all users in system
+get_users() {
+	[ -z "${USERS[*]}" ] && init_users
+	for i in "${USERS[@]}"; do
+		echo "${i%% /*}"
+	done
+}
+
+get_user_home() {
+	local usr=$1
+	[ -z "${USERS[*]}" ] && init_users
+	for i in "${USERS[@]}"; do
+		[ "${i%% /*}" = "$usr" ] && echo "/${i#* /}" && break
+	done
+}
+
+get_current_user() {
+	if [ -e /dev/console ]; then
+		echo "$(stat -f %Su /dev/console)"
+		return
+	fi
+	echo "$(who am i | awk '{print $1}')"
+}
+
+is_beta() {
+	test -f "${BUNDLE_PATH}/Contents/Resources/.beta"
+}
+
+run_as_user() {
+	local usr=$1
+	local args=
+	shift
+	for a in "$@"; do
+		a=${a//\'/\'\"\'\"\'}
+		args="${args}${args:+ }'${a}'"
+	done
+	args="$(tr '\n' ' ' <<< $args)"
+	# Let run command in / since current working directory may not be accessible
+	# for user specified.
+	pushd / >/dev/null
+	su "$usr" -c "$args"
+	local rc=$?
+	popd >/dev/null
+	return $rc
+}
+
+# Fix permissions of ~/Library/Parallels for all users
+fix_library_parallels_dir_perms() {
+	log "Fixing Library/Parallels permissions..."
+	IFS=$'\n'
+	for usr in `get_users`; do
+		for d in '' 'Parallels Desktop/'; do
+			local usr_home=`get_user_home "$usr"`
+			local path="${usr_home}/Library/Parallels/${d}"
+			[ -d "${path}" ] || continue
+
+			if chown "${usr}" "${path}" && chmod 755 "$path"; then
+				log "* ${usr}  OK"
+			else
+				log warning "* ${usr}  FAILED"
+			fi
+		done
+	done
+	unset IFS
+}
+
+install_safari_extensions() {
+	log "Installing Safari extensions..."
+	IFS=$'\n'
+	for user in `get_users`; do
+		log "Installing Safari extensions for "${user}"..."
+		local usr_home=`get_user_home "$user"`
+		for ext  in "${BUNDLE_PATH}"/Contents/Library/Safari/Extensions/* ; do
+			run_as_user "${user}" "${BUNDLE_PATH}/Contents/MacOS/add_safari_ext" "${ext}" "$usr_home"
+		done
+	done
+	unset IFS
+}
+
+# Set permissions and owners
+# params:
+#	$1 - path to file with exceptions
+#	$2 - path to bundle
+init() {
+	local exc="$1"
+	local bundle="$2"
+
+	local prod_ver=$(prod_version "$bundle")
+	if check "${exc}" "${bundle}"; then
+		log "Bundle '${bundle}' (${prod_ver}) already initialized"
+		return
+	fi
+	log "Bundle '${bundle}' (${prod_ver}) is not initialized: let's cook it"
+
+	RC="${RC_OK}"
+
+	# Drop bundle owners to non-priveleged account
+	log "Set bundle owners to '${DEFAULT_OWNER}:${DEFAULT_GROUP}'"
+	chown -R "${DEFAULT_OWNER}":"${DEFAULT_GROUP}" "${bundle}"
+	if [ $? -ne 0 ]; then
+		log error "Failed to set bundle owners"
+		RC=${RC_BROKEN_INSTALLATION}
+		return
+	fi
+
+	# Set owners and permissions according exceptions file
+	while read line && [ -n "${line}" ]; do
+		# Parse row from exceptions file
+		declare -a row=$("${ECHO}" -n "${line}")
+
+		# Check for file exists
+		local path=${bundle}/${row[${COL_PATH}]}
+		if ! [ -e "${path}" ]; then
+			log error "${row["${COL_PATH}"]} doesn't exist"
+			RC="${RC_BROKEN_INSTALLATION}"
+			continue
+		fi
+
+		# Set owners
+		local own=${row[${COL_OWNER}]}:${row[${COL_GROUP}]}
+		if [ ":" != "${own}"  ]; then
+			chown "${own}" "${path}"
+			if [ $? -ne 0 ]; then
+				log error "Failed to set ownership '${own}' on path '${path}'"
+				RC=${RC_BROKEN_INSTALLATION}
+			fi
+		fi
+
+		# Set permissions according exceptions
+		local perms=${row[${COL_PERM}]}
+		chmod "${perms}" "${path}"
+		if [ $? -ne 0 ]; then
+			log error "Failed to set permissions '${perms}' on path '${path}'"
+			RC=${RC_BROKEN_INSTALLATION}
+		fi
+	done < "$exc"
+}
+
+remove_broken_installation() {
+	local bundle=$1
+
+	local kext_ver=`sed 's;.*com\.parallels.*(\(.*\)).*;\1;g'`
+	[ -z "${kext_ver}" ] && return
+
+	local version_major=`echo ${kext_ver} | sed 's;\([[:digit:]]*\)\..*;\1;'`
+	local version_build=`echo ${kext_ver} | sed 's;.*\ \([[:digit:]]*\)\..*;\1;'`
+
+	case "${version_major}" in
+		4)
+			log "* PD4 installation detected"
+			tar -xzf "${bundle}/Contents/Resources/uninstaller-akkad4-parts.tgz" -C /
+		;;
+		5)
+			log "* PD5 installation detected"
+			tar -xzf "${bundle}/Contents/Resources/uninstaller-akkad5-parts.tgz" -C /
+		;;
+		6)
+			log "* PD6 installation detected"
+			tar -xzf "${bundle}/Contents/Resources/uninstaller-akkad6-parts.tgz" -C /
+		;;
+		7)
+			if [[ "${version_build}" -lt 15104 ]]; then
+				log "* PD7 installation detected"
+				tar -xzf "${bundle}/Contents/Resources/uninstaller-akkad7-parts.tgz" -C /
+			else
+				log "* PD7-flat-binary installation detected"
+				tar -xzf "${bundle}/Contents/Resources/uninstaller-akkad7-fb-parts.tgz" -C /
+			fi
+		;;
+		*)
+			log "Found unexpected kext version '${kext_ver}'"
+	esac
+
+	uninstall_previous_version "${bundle}"
+}
+
+uninstall_previous_version() {
+	local bundle=$1
+
+	local bundle_name="$(basename "${bundle}")"
+	local temp_dir="$(mktemp -d -t parallels-desktop)"
+	local temp_bundle="${temp_dir}/${bundle_name}"
+
+	# Checks
+	if [ ! -d "${temp_dir}" ]; then
+		log error "Unable to create temporary directory '${temp_dir}'. Aborting uninstallation."
+		return
+	fi
+
+	log "Starting uninstallation procedure of"
+	update_progress 0 "STATE_UNINSTALL"
+
+	# A big switcheroo
+	# Backup current Parallels Desktop bundle
+	log "Backup Parallels Desktop [${bundle} > ${temp_bundle}]"
+	out="$(mv "${bundle}" "${temp_bundle}" 2>&1)"
+	if [ "${?}" -ne 0 ]; then
+		log error "Unable to backup Parallels Desktop: ${out}"
+		exit "${RC_BROKEN_UNINSTALLATION}"
+	fi
+
+	update_progress $((20/$INFO_STATES_COUNT))
+
+	# Runnin uninstallation of previous version
+	log "Running uninstaller"
+	out="$("${temp_bundle}/Contents/MacOS/Parallels Installer" uninstaller_remove)"
+	[ "${?}" -ne 0 ] &&
+		log warning "Errors running uninstaller: ${out}"
+
+	update_progress $((50/$INFO_STATES_COUNT))
+
+	# Restoring current Parallels Desktop bundle
+	log "Restore Parallels Desktop [${temp_bundle} > ${bundle}]"
+	out="$(mv "${temp_bundle}" "${bundle}" 2>&1)"
+	if [ "${?}" -ne 0 ]; then
+		log error "Unable to restore Parallels Desktop: ${out}"
+		exit "${RC_BROKEN_UNINSTALLATION}"
+	fi
+
+	update_progress $((20/$INFO_STATES_COUNT))
+
+	# And final clean up
+	rm -rf "${temp_dir}"
+
+	log "End of uninstallation procedure"
+	update_progress $((10/$INFO_STATES_COUNT))
+}
+
+# Shared Apps Stubs Fixing:
+# - non-ascii symbols in CFBundleIdentifier;
+# - main stub binary.
+fix_sharedapp_bundle() {
+	local bundle="${2}"
+	local plist_fixer="${bundle}/Contents/MacOS/shapp_plist_fixer.py"
+
+	# Code taken as is from GUI postflight
+	local bundle_id="com.parallels.winapp."
+	local lsreg="/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister"
+	local new_stub="${bundle}/Contents/Resources/WinAppHelper"
+	export PYTHONIOENCODING=UTF-8
+	IFS=$'\n'
+	for i in `get_users`; do
+		for app in $(
+				run_as_user "$i" "${lsreg}" -dump |
+				grep -B3 "${bundle_id}" |
+				sed -n "s,^.*path:.*\(/Users/${i}\),\1,gp;s,^.*path:.*\(/Applications\),\1,gp" |
+				"${plist_fixer}")
+			do
+			if [ -d "${app}" ]; then
+				cp -pPRf "${new_stub}" "${app}/Contents/MacOS/WinAppHelper"
+			fi
+		done
+	done
+	unset $IFS
+}
+
+# Registers our bundles in LaunchServices.
+# Code was ported from PD7 "instmounter" script.
+reg_bundles() {
+	local bundle="${2}"
+	local mounter="${bundle}/Contents/Applications/Parallels Mounter.app"
+	local shapp_link="${bundle}/Contents/Applications/Parallels Link.app"
+	local lsreg="/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister"
+
+	if [ ! -e "${lsreg}" ]; then
+		log warning "lsregister not found"
+		return
+	fi
+
+	IFS=$'\n'
+	for usr in `get_users`; do
+		for tool in "${mounter}" "${shapp_link}"; do
+			run_as_user "${usr}" "${lsreg}" -f "${tool}" 2>/dev/null
+		done
+	done
+	unset IFS
+}
+
+# Fixup icons of "~/Applications (Parallels)" for each user.
+prlapps_folder_icon() {
+	local bundle="${2}"
+	local icon="${bundle}/Contents/Resources/AppsMenuFolderIcon.icns"
+	IFS='\n'
+	for usr in `get_users`; do
+		local usr_home=`get_user_home "$usr"`
+		local dir="${usr_home}/Applications (Parallels)"
+		[ -d "${dir}" ] || continue
+		/usr/bin/python -c "
+from AppKit import NSWorkspace, NSImage
+ws = NSWorkspace.sharedWorkspace()
+if ws.iconForFile_('${dir}'):
+	ws.setIcon_forFile_options_(None, '${dir}', 0)
+ws.setIcon_forFile_options_(
+	NSImage.alloc().initWithContentsOfFile_('${icon}'),
+	'${dir}', 0)"
+	done
+	unset IFS
+}
+
+# check and uninstall installed launchd service
+# params:
+#	$1 - path to bundle
+check_and_uninstall_prev_launchd_service() {
+	local bundle="${1}"
+	local launchd_setup="${bundle}/${LAUNCHD_SETUP_REL_PATH}"
+
+	"${launchd_setup}" need_to_start_as_service
+	if [ $? -eq 0 ] ;then
+		HEADLESS_MODE="yes"
+		"${launchd_setup}" uninstall || log error "Unable to uninstall launchd service."
+
+		# launchd service will be installed
+		"${launchd_setup}" copy_plist || log error "Unable to copy pd-launchd.plist to prepare launchd service to start."
+	fi
+}
+
+read_prod_version() {
+	local bundle=${1}
+	local plist="${bundle}/Contents/Info.plist"
+	if [ ! -r "${plist}" ]; then
+		log error "Cannot read bundle plist '${plist}'"
+		return 1
+	fi
+
+	local build=$(defaults read "${plist}" CFBundleVersion)
+	local version=$(defaults read "${plist}" CFBundleShortVersionString)
+	[ -z "${build}" -o -z "${version}" ] && return 1
+	VERSION="${version}-${build}"
+	return 0
+}
+
+prod_version() {
+	local bundle=$1
+	[ -z "$VERSION" ] && read_prod_version "$bundle"
+	echo "$VERSION"
+}
+
+find_kexts_loaded() {
+	local kexts=(
+		netbridge
+		hypervisor
+		usbconnect
+		vnic
+		hidhook
+		prl_netbridge
+		prl_hypervisor
+		prl_usbconnect
+		prl_vnic
+		prl_hidhook
+		prl_usb_connect
+		prl_hid_hook
+		vmmain
+		ConnectUSB
+		Pvsnet
+		)
+	IFS='|'
+	local pattern="${kexts[*]}"
+	unset IFS
+	kextstat | grep -E "com.parallels.kext.(${pattern})"
+}
+
+uninstall() {
+	local bundle=$1
+
+	log "Check for previous version and uninstall if need"
+	uninstall_previous_version "${bundle}"
+	[ ! "${RC}" = "${RC_OK}" ] && return
+
+	log "Check and remove broken previous version..."
+	find_kexts_loaded | remove_broken_installation "${bundle}"
+
+	check_and_uninstall_prev_launchd_service "${bundle}"
+}
+
+save_bundle_location() {
+	local bundle="$1"
+
+	mkdir -p "$(dirname "${BUNDLE_LOCATION_FILE}")" && \
+	echo -n "${bundle}" > "${BUNDLE_LOCATION_FILE}" || return $RC_UNEXISTENT_PATH
+
+	chown "${DEFAULT_OWNER}":"${DEFAULT_GROUP}" "${BUNDLE_LOCATION_FILE}" && \
+	chmod 644 "${BUNDLE_LOCATION_FILE}" || return $RC_SUPERUSER_REQ
+}
+
+# Run initial bootstrap procedures
+# params:
+#	$1 - path to file with exceptions
+#	$2 - path to bundle
+bootstrap() {
+	check_superuser_or_exit
+
+	local exc="$1"
+	local bundle="$2"
+
+	log "Current umask: $(umask)"
+	umask 0022
+
+	init "${exc}" "${bundle}"
+	if [ "${RC}" != "0" ]; then
+		log error "Preinitialization failed"
+		exit $RC
+	fi
+
+	# We are root but if we are not able to start subscripts under root
+	# need to restart ourselves under Parallels Installer wrapper.
+	if /bin/bash -c '[ $(id -u) -ne 0 ]'; then
+		log "Restarting itself to be able to pass root to subscripts"
+		"${bundle}/Contents/MacOS/Parallels Installer" \
+			init_bundle "${bundle}" "${SERVICE_FLAG}"
+		exit $?
+	fi
+
+	log "Bootstrap actions"
+	local temp_path="$(mktemp -d /tmp/parallels-desktop-init-$$.tmp)"
+	chmod 0777 "${temp_path}"
+
+	pushd "${temp_path}" >/dev/null
+	uninstall "${bundle}"
+	[ ! "${RC}" = "${RC_OK}" ] && return
+
+	# List of background actions
+	local bg_actions=(install_safari_extensions \
+		fix_sharedapp_bundle reg_bundles prlapps_folder_icon)
+	local bg_jobs=()
+	# List of actions required for instalation
+	local actions="fix_library_parallels_dir_perms"
+
+	local total_actions=$((${#bg_actions[@]} + `echo ${actions} | wc -w`))
+	local progress_step=$((100/$total_actions))
+
+	update_progress 0 "STATE_INIT"
+
+	for ((i=0; i<"${#bg_actions[@]}"; i++)); do
+		# Run action and check status
+		log "Starting bootstrap action '${bg_actions[$i]}' in background"
+		"${bg_actions[$i]}" "${exc}" "${bundle}" &
+		bg_jobs+=($!)
+	done
+
+	for action in ${actions}; do
+		# Run action and check status
+		log "Starting bootstrap action '${action}'"
+		"${action}" "${exc}" "${bundle}"
+		log "Endinging bootstrap action '${action}' with exit code '${RC}'"
+		[ ! "${RC}" = "${RC_OK}" ] && break
+		update_progress $(($progress_step/$INFO_STATES_COUNT))
+	done
+
+	# Waiting for background jobs
+	for ((i=0; i<"${#bg_jobs[@]}"; i++)); do
+		log "Waiting background job '${bg_actions[$i]}' with pid ${bg_jobs[i]}..."
+		wait "${bg_jobs[$i]}"
+		exit_code="$?"
+		if [ "${exit_code}" != 0 ]; then
+			log error "Background job '${bg_actions[$i]}' finished with exit code '${exit_code}'"
+		else
+			log "  '${bg_actions[$i]}' finished successfuly"
+			update_progress $(($progress_step/$INFO_STATES_COUNT))
+		fi
+	done
+
+	# Remove temporary directory
+	log "Remove temporary directory (${temp_path})"
+	popd >/dev/null
+	rm -rf "${temp_path}"
+
+	save_bundle_location "${bundle}"
+	RC=$?
+}
+
+dump_dup_uids() {
+	local usr_ids=$(dscl . list /Users UniqueID 2>/dev/null)
+	[ -z "${usr_ids}" ] && return
+
+	local dup_ids=$(echo "${usr_ids}" | awk '{print $2}' | sort -g | uniq -d)
+	[ -z "${dup_ids}" ] && return
+
+	log warning "Found duplicating UIDs:"
+	for id in ${dup_ids}; do
+		IFS=$'\n'
+		for str in $(echo "${usr_ids}" | grep "[[:space:]]${id}$"); do
+			log warning "${str}"
+		done
+		unset IFS
+	done
+}
+
+check_uid0() {
+	local users=$(dscl . list /Users UniqueID 2>/dev/null |
+		grep -v '^root[[:space:]]' | grep '[[:space:]]0$')
+	[ -z "${users}" ] && return
+	log error "Found UID 0 duplication for user(s):"
+	IFS=$'\n'
+	for usr in ${users}; do
+		log error " - ${usr% 0}"
+	done
+	unset IFS
+	exit $RC_UID0_DUPS
+}
+
+check_path_perms() {
+	local path=$1
+	if [ -d "$path" ]; then
+		[ -w "$path" -a -x "$path" ]
+	fi
+}
+
+check_home_library_parallels() {
+	local rc=0
+	for d in '' 'Parallels Desktop/'; do
+		local path
+		if check_superuser; then
+			local check_path_perms_f=$(declare -f check_path_perms)
+			IFS=$'\n'
+			for usr in `get_users`; do
+				local usr_home=`get_user_home "$usr"`
+				run_as_user "$usr" bash -c 'true' || continue
+				path="${usr_home}/Library/Parallels/${d}"
+				run_as_user "$usr" /bin/bash -c \
+						"$check_path_perms_f; check_path_perms '$path'"
+				rc=$?
+				[ $rc -ne 0 ] && break
+			done
+			unset IFS
+		else
+			local curr_usr=`get_current_user`
+			local curr_usr_home=`get_user_home "$curr_usr"`
+			path="${curr_usr_home}/Library/Parallels/${d}"
+			check_path_perms "$path"
+			rc=$?
+		fi
+		if [ $rc -ne 0 ]; then
+			log warning "No wx-permissions for '${path}'. Need to fix."
+			return $rc
+		fi
+	done
+	return 0
+}
+
+check_reboot_required() {
+	local bundle=$1
+	# Our global VERSION (product version) is in format "A.B.C-D"
+	# kextstat(1) returns kexts versions as "A.B.C D"
+	local ver=$(prod_version "$bundle" | tr '-' ' ')
+	# Find all PDfM's kexts except our own:
+	local old_kexts=$(find_kexts_loaded |
+		grep -v "com\.parallels\.kext\.[^ ]* (${ver})" |
+		sed 's/.*\(com\.parallels\.kext\.[^ ]*\) .*/\1/')
+	if [ -n "$old_kexts" ]; then
+		log error "Old Parallels Desktop kexts found loaded:" \
+				"${old_kexts//$'\n'/ }"
+		log error 'Will require reboot'
+		return 1
+	fi
+
+	return 0
+}
+
+# Check permissions and owners
+# params:
+#	$1 - path to file with exceptions
+#	$2 - path to bundle
+check() {
+	local exc=$1
+	local bundle=$2
+
+	RC=$RC_OK
+
+	# Check and log about duplicating UIDs
+	dump_dup_uids
+
+	while read line && [ -n "${line}" ]; do
+		# Parse row from exceptions file
+		declare -a row=$("${ECHO}" -n "${line}")
+
+		# Check for file exists
+		if ! [ -e "${bundle}/${row["${COL_PATH}"]}" ]; then
+			log error "${row["${COL_PATH}"]} doesn't exist"
+			RC="${RC_BROKEN_INSTALLATION}"
+			break
+		fi
+
+		local file_path="${bundle}/${row[$COL_PATH]}"
+
+		local owners=$(stat -f '%Su:%Sg' "${file_path}")
+		local perm=$(stat -f '%p' "${file_path}" | tail -c5)
+
+		if [ "${perm}" != "${row[COL_PERM]}" ]; then
+			log error "'"${file_path}"' - incorrect permissions ("${perm}")"
+			RC="${RC_BROKEN_INSTALLATION}"
+			break
+		fi
+
+		# For empty fields in exceptions file set owner and group to actual
+		[ -z "${row[${COL_OWNER}]}" ] && row[${COL_OWNER}]=$(echo "${owners}" | sed 's/^\(.*\):.*$/\1/')
+		[ -z "${row[${COL_GROUP}]}" ] && row[${COL_GROUP}]=$(echo "${owners}" | sed 's/^*.:\(.*\)$/\1/')
+
+		if [ "${owners}" != "${row["${COL_OWNER}"]}:${row["${COL_GROUP}"]}" ]; then
+			log error "'"${file_path}"' - incorrect owners ("${owners}")"
+			RC="${RC_BROKEN_INSTALLATION}"
+			break
+		fi
+	done < "$exc"
+
+	if [ -r "${BUNDLE_LOCATION_FILE}" ]; then
+		local bundle_location="$(cat "${BUNDLE_LOCATION_FILE}")"
+		if [ "${bundle_location}" != "${bundle}" ]; then
+			log error "Last bundle location was changed"
+			RC="${RC_BROKEN_INSTALLATION}"
+		fi
+	else
+		log error "Last bundle location file was not found"
+		RC="${RC_BROKEN_INSTALLATION}"
+	fi
+
+	if [ "$RC" = "$RC_OK" ]; then
+		check_home_library_parallels || RC="${RC_BROKEN_INSTALLATION}"
+	fi
+
+	if [ "$RC" = "$RC_OK" ]; then
+		check_reboot_required "$bundle" || NEED_REBOOT=1
+	fi
+
+	return ${RC}
+}
+
+check_prev_installation() {
+	local bundle=$1
+	local uninstaller="${bundle}/Contents/MacOS/Uninstaller"
+	"${uninstaller}" check
+	RC=$?
+}
+
+# Stop all services and unload all kext-s from previous PD8+ installation
+stop_services() {
+	local target=$1
+	local launcher="${target}/Contents/MacOS/launcher"
+	[ -r "${launcher}" ] || return
+
+	log "Found launcher script '${launcher}'." \
+		"Stopping services from previous installation..."
+	# TODO It is possible to call launcher in parallel.
+	IFS=$'\n'
+	for usr in `get_users`; do
+		run_as_user "${usr}" /bin/bash "${launcher}" stop
+	done
+	unset IFS
+	/bin/bash "${launcher}" stop
+}
+
+get_dmg_file() {
+	local mnt_pt=$1
+
+	local dev_entry="^/dev/disk[0-9s]+\\t[0-9A-F-]+\\t${mnt_pt}\$"
+	hdiutil info |
+			grep -E "(${dev_entry}|image-path)" |
+			grep -B1 -E "$dev_entry" |
+			sed -n '1s/^image-path *: \(.*\)$/\1/p'
+}
+
+store_info_file() {
+	local file="${1}"
+	local value="${2}"
+
+	touch "${file}" &&
+			chown root:wheel "${file}" &&
+			chmod 0600 "${file}" &&
+			echo "${value}" >"${file}"
+}
+
+treat_download_info() {
+	local bundle=$1
+	local target=$2
+
+	local mnt_pt=${bundle%/*}
+	local dmg_path=$(get_dmg_file "$mnt_pt")
+	if ! [ -n "$dmg_path" -a -f "$dmg_path" ]; then
+		log error "Failed to get path to DMG image for volume '${mnt_pt}'"
+		return
+	fi
+
+	local attr_name='com.apple.metadata:kMDItemWhereFroms'
+	local dmg_attr
+	dmg_attr=$(xattr -px "$attr_name" "$dmg_path" 2>/dev/null)
+	if ! [ $? -eq 0 -a -n "$dmg_attr" ]; then
+		log error "Failed to get 'where from' meta-data for '${dmg_path}'"
+		store_info_file "${VENDOR_INFO_FILE}" "" &&
+			log info 'Vendor info cleaned up'
+		return
+	fi
+
+	local dmg_url=$(echo "$dmg_attr"  | xxd -p -r |
+			plutil -convert xml1 -o - - |
+			sed -n 's#.*<string>\(.*\)</string>.*#\1#p')
+	local token=$(echo "$dmg_url" |
+			sed -En 's/.*[\?&]ac=([^&]+).*/\1/p')
+
+	if [ -z "${token}" ] ; then
+		# try to cleanup a previous file
+		rm -f "${ACTIVATION_TOKEN_FILE}"
+	else
+		store_info_file "${ACTIVATION_TOKEN_FILE}" "${token}" &&
+			log info 'Activation token saved'
+	fi
+
+	store_info_file "${VENDOR_INFO_FILE}" "${dmg_url}" &&
+			log info 'Vendor info saved'
+}
+
+# Install PD to the target location
+# params:
+#	$1 - path to the file with exceptions
+#	$2 - path to the bundle
+#	$3 - target to install bundle
+install_pd() {
+	check_superuser_or_exit
+
+	local exc=$1
+	local bundle=$2
+	local target=$3
+
+	log info "Starting Parallels Desktop installation"
+	log info "Bundle '${bundle}', version '$(prod_version "$bundle")'"
+
+	stop_services "${target}"
+
+	# XXX Think of moving into uninstaller part and
+	# better selection of removables.
+	log "Remove symlinks to kexts"
+	rm -rf /System/Library/Extensions/prl*
+
+	update_progress -1 "STATE_COPY"
+	rm -rf "${target}" > /dev/null
+	log "Copying product into '${target}'"
+	out=`cp -a "${bundle}" "${target}" 2>&1`
+	if [ $? -ne 0 ]; then
+		log error "Can't copy bundle to ${target}: ${out}"
+		exit "${RC_BROKEN_INSTALLATION}"
+	fi
+
+	# Remove quarantine attributes
+	xattr -dr com.apple.quarantine "${target}"
+
+	# Register application associations
+	open "${target}/Contents/Applications/Parallels Link.app"
+
+	# Set Finder tag for application bundle
+	# Magic hex value is "Parallels Desktop application bundle" with additional symbols
+	# To get it, set tag to bundle in Finder and type
+	# xattr -px com.apple.metadata:_kMDItemUserTags /Applications/Parallels\ Desktop.app
+	#
+	xattr -wx com.apple.metadata:_kMDItemUserTags 62706C6973743030A1015F1024506172616C6C656C73204465736B746F70206170706C69636174696F6E2062756E646C65080A0000000000000101000000000000000200000000000000000000000000000031 "${target}"
+
+	# Reset extended HFS visibility attribute
+	xattr -wx com.apple.FinderInfo 0000000000000000001000000000000000000000000000000000000000000000 "${target}"
+
+	# Reset UF_HIDDEN flag
+	chflags nohidden "${target}"
+
+	"${target}/Contents/MacOS/Parallels Installer" init_bundle "${target}" "${SERVICE_FLAG}"
+	RC="$?"
+
+	if [ $RC -eq $RC_OK ] || [ $RC -eq ${RC_NEED_REBOOT} ] ; then
+		 treat_download_info "$bundle" "$target"
+	fi
+}
+
+start_services() {
+	local launcher_arg1="restart"
+	local launcher_arg2=""
+
+	if [ "X${HEADLESS_MODE}" == "Xyes" ];then
+		launcher_arg1="start" # 'start' only: services were already restarted in headless mode
+		launcher_arg2="--agents-only"
+		local launchd_setup="${BUNDLE_PATH}/${LAUNCHD_SETUP_REL_PATH}"
+
+		"${launchd_setup}" install --force
+	fi
+
+	run_as_user "$(get_current_user)" /bin/bash "${BUNDLE_PATH}/Contents/MacOS/launcher" "${launcher_arg1}" "${launcher_arg2}"
+}
+
+instance_wait() {
+	local pid=$$
+	local ppid=$PPID
+	local timeout=120 # wait for 2 minutes
+	local shown=0
+	while [ $timeout -gt 0 ]; do
+		pids=$(ps -A -o pid,command |
+			grep -v -E "^[[:space:]]*($pid|$ppid) " |
+			sed -En 's#^[[:space:]]*([[:digit:]]+) /bin/bash .*inittool.*$#\1#p')
+		local found=0
+		for p in $pids; do
+			kill -0 $p >/dev/null 2>&1 && found=$p && break
+		done
+		[ $found -eq 0 ] && return
+
+		[ $shown -ne 1 ] && shown=1 &&
+			log warning "Another instance of inittool is detected" \
+				"(pid $found). Waiting ${timeout} seconds..."
+		sleep 1
+		((--timeout))
+	done
+	log warning "Timeout of waiting of another instance is expired. Continue..."
+}
+
+check_bin() {
+	local b=$1
+	type ${b} >/dev/null 2>&1 && return 0
+
+	log error "Fatal: '${b}' is missing"
+	exit $RC_BROKEN_SYS
+}
+
+check_sys() {
+	# XXX Check logger first?
+
+	check_bin 'sw_vers'
+	IFS='.'
+	osx_ver=($(sw_vers -productVersion))
+	unset IFS
+
+
+	check_bin 'kextload'
+	check_bin 'kextunload'
+	check_bin 'kextstat'
+	check_bin 'grep'
+	check_bin 'sed'
+	check_bin 'su'
+	check_bin 'codesign'
+	check_bin 'defaults'
+	return 0
+}
+
+check_disk_space() {
+	local src=$1
+	local dst=$2
+	local prefix='Disk space check:'
+
+	if [ ! -e "${src}" ]; then
+		log error "${prefix} source path '${src}' doesn't exist"
+		return
+	fi
+	local src_sz=$(du -sk "${src}" | cut -f1)
+	local req_sz=$((src_sz * 3 / 2))
+	log "${prefix} source size: ${src_sz} Kb (${req_sz} Kb will require)"
+
+	local base_dst=$(dirname "${dst}")
+	if [ ! -e "${base_dst}" ]; then
+		log error "${prefix} destination path '${dst}' doesn't exist"
+		return
+	fi
+	local base_dst_sz=$(df -k "${base_dst}" |
+		sed -n '2p' | awk '{print $4}')
+	# We don't add space freed after removing dst directory if exists
+	# for not to confuse user.
+
+	log "${prefix} ${base_dst_sz} Kb is available"
+	if [ ${req_sz} -gt ${base_dst_sz} ]; then
+		local add_sz=$((req_sz - base_dst_sz))
+		log error "${prefix} plz free $((add_sz / 1024 + 1)) Mb"
+		echo "INIT_REQ_SPACE $((base_dst_sz * 1024)) $((add_sz * 1024))"
+		exit $RC_NO_DISK_SPACE
+	fi
+}
+
+
+# Parse command line arguments
+if [ "$1" = "-h" ]; then
+	"${ECHO}" "${USAGE}"
+	exit "${RC_OK}"
+fi
+
+check_sys
+ACTION="$1"
+
+OPTIND=2
+while getopts e:b:t:s OPT; do
+    case "${OPT}" in
+	e)	EXCEPTIONS_FILE_PATH="${OPTARG}"
+		;;
+	b)	BUNDLE_PATH="${OPTARG}"
+		;;
+	t)	TARGET_PATH="${OPTARG}"
+		;;
+	s)	START_SERVICES="yes"
+		SERVICE_FLAG="-s"
+		;;
+	*)	log error "Incorrect comand line. Try '${SCRIPT_NAME} -h' for help."
+		exit "${RC_INCORRECT_CL}"
+		;;
+    esac
+done
+
+# Check other arguments
+if ! [ -f "${EXCEPTIONS_FILE_PATH}" ]; then
+	log error "File '${EXCEPTIONS_FILE_PATH}' doesn't exists"
+	exit "${RC_UNEXISTENT_PATH}"
+fi
+if ! [ -d "${BUNDLE_PATH}" ]; then
+	log error "Directory '${BUNDLE_PATH}' doesn't exists"
+	exit "${RC_UNEXISTENT_PATH}"
+fi
+
+BUNDLE_PATH="$(cd "${BUNDLE_PATH}" && pwd)"
+
+# Let's do ACTION
+case "${ACTION}" in
+	init)
+		instance_wait
+		bootstrap "${EXCEPTIONS_FILE_PATH}" "${BUNDLE_PATH}"
+		[ "${RC}" = "${RC_OK}" ] && check "${EXCEPTIONS_FILE_PATH}" "${BUNDLE_PATH}"
+		if [ "${RC}" = "${RC_OK}" ] && [ "x${START_SERVICES}" = "xyes" ]; then
+			start_services
+			RC="$?"
+		fi
+		[ "$RC" = "$RC_OK" -a "$NEED_REBOOT" = '1' ] && RC=$RC_NEED_REBOOT
+		;;
+
+	check)
+		check "${EXCEPTIONS_FILE_PATH}" "${BUNDLE_PATH}"
+		[ "$RC" = "$RC_OK" -a "$NEED_REBOOT" = '1' ] && RC=$RC_NEED_REBOOT
+		;;
+
+	check_prev_installation)
+		check_prev_installation "${BUNDLE_PATH}"
+		;;
+
+	check_disk_space)
+		if [ -n "${TARGET_PATH}" ]; then
+			check_disk_space "${BUNDLE_PATH}" "${TARGET_PATH}"
+		else
+			log error "Disk space check requires -t option."
+			RC="${RC_INCORRECT_CL}"
+		fi
+		;;
+
+	install)
+		instance_wait
+		check_uid0
+		check_disk_space "${BUNDLE_PATH}" "${TARGET_PATH}"
+		if [ -n "${TARGET_PATH}" ]; then
+			install_pd "${EXCEPTIONS_FILE_PATH}" "${BUNDLE_PATH}" "${TARGET_PATH}"
+		else
+			log error "Target doesn't specified"
+			RC="${RC_INCORRECT_CL}"
+		fi
+		;;
+
+	*)	log error "Incorrect action. Try '${SCRIPT_NAME} -h' for help."
+		RC="${RC_INCORRECT_CL}"
+		;;
+esac
+
+exit "${RC}"
