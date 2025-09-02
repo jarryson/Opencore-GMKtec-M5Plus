@@ -46,6 +46,14 @@
                     <key>Path</key>
                     <string>SSDT-USBX.aml</string>
                 </dict>
+                <dict>
+                    <key>Comment</key>
+                    <string>_OSI override to return true through Windows 10 - requires _OSI to XOSI rename</string>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Path</key>
+                    <string>SSDT-XOSI.aml</string>
+                </dict>
             </array>
             <key>Delete</key>
             <array/>
@@ -222,6 +230,36 @@
                     <data>AAAAAA==</data>
                     <key>Replace</key>
                     <data>IgAAeQA=</data>
+                    <key>ReplaceMask</key>
+                    <data></data>
+                    <key>Skip</key>
+                    <integer>0</integer>
+                    <key>TableLength</key>
+                    <integer>0</integer>
+                    <key>TableSignature</key>
+                    <data></data>
+                </dict>
+                <dict>
+                    <key>Base</key>
+                    <string></string>
+                    <key>BaseSkip</key>
+                    <integer>0</integer>
+                    <key>Comment</key>
+                    <string>_OSI to XOSI rename - requires SSDT-XOSI.aml</string>
+                    <key>Count</key>
+                    <integer>0</integer>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Find</key>
+                    <data>X09TSQ==</data>
+                    <key>Limit</key>
+                    <integer>0</integer>
+                    <key>Mask</key>
+                    <data></data>
+                    <key>OemTableId</key>
+                    <data></data>
+                    <key>Replace</key>
+                    <data>WE9TSQ==</data>
                     <key>ReplaceMask</key>
                     <data></data>
                     <key>Skip</key>
@@ -1657,6 +1695,13 @@
         <dict>
             <key>Add</key>
             <dict>
+                <key>4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102</key>
+                <dict>
+                    <key>revblock</key>
+                    <string>media</string>
+                    <key>rtc-blacklist</key>
+                    <data></data>
+                </dict>
                 <key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
                 <dict>
                     <key>bluetoothExternalDongleFailed</key>
