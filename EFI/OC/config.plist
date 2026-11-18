@@ -378,7 +378,7 @@
                     <key>BundlePath</key>
                     <string>Lilu.kext</string>
                     <key>Comment</key>
-                    <string>V1.7.1</string>
+                    <string>V1.7.2</string>
                     <key>Enabled</key>
                     <true/>
                     <key>ExecutablePath</key>
@@ -396,7 +396,7 @@
                     <key>BundlePath</key>
                     <string>VirtualSMC.kext</string>
                     <key>Comment</key>
-                    <string>V1.3.7</string>
+                    <string>V1.3.8</string>
                     <key>Enabled</key>
                     <true/>
                     <key>ExecutablePath</key>
@@ -430,13 +430,13 @@
                     <key>Arch</key>
                     <string>Any</string>
                     <key>BundlePath</key>
-                    <string>AppleALC.kext</string>
+                    <string>RestrictEvents.kext</string>
                     <key>Comment</key>
-                    <string>V1.9.5</string>
+                    <string>V1.1.7</string>
                     <key>Enabled</key>
                     <true/>
                     <key>ExecutablePath</key>
-                    <string>Contents/MacOS/AppleALC</string>
+                    <string>Contents/MacOS/RestrictEvents</string>
                     <key>MaxKernel</key>
                     <string></string>
                     <key>MinKernel</key>
@@ -450,7 +450,7 @@
                     <key>BundlePath</key>
                     <string>NVMeFix.kext</string>
                     <key>Comment</key>
-                    <string>V1.1.2</string>
+                    <string>V1.1.3</string>
                     <key>Enabled</key>
                     <true/>
                     <key>ExecutablePath</key>
@@ -486,7 +486,7 @@
                     <key>BundlePath</key>
                     <string>ForgedInvariant.kext</string>
                     <key>Comment</key>
-                    <string>V1.1.0</string>
+                    <string>V1.5.0</string>
                     <key>Enabled</key>
                     <true/>
                     <key>ExecutablePath</key>
@@ -520,13 +520,13 @@
                     <key>Arch</key>
                     <string>Any</string>
                     <key>BundlePath</key>
-                    <string>RestrictEvents.kext</string>
+                    <string>SMCProcessorAMD.kext</string>
                     <key>Comment</key>
-                    <string>V1.1.6</string>
+                    <string>V1.0.1</string>
                     <key>Enabled</key>
                     <true/>
                     <key>ExecutablePath</key>
-                    <string>Contents/MacOS/RestrictEvents</string>
+                    <string>Contents/MacOS/SMCProcessorAMD</string>
                     <key>MaxKernel</key>
                     <string></string>
                     <key>MinKernel</key>
@@ -538,13 +538,13 @@
                     <key>Arch</key>
                     <string>Any</string>
                     <key>BundlePath</key>
-                    <string>SimpleRTLHV.kext</string>
+                    <string>SMCRadeonSensors.kext</string>
                     <key>Comment</key>
-                    <string>V1.0.1</string>
+                    <string>V2.4.0</string>
                     <key>Enabled</key>
                     <true/>
                     <key>ExecutablePath</key>
-                    <string>Contents/MacOS/SimpleRTLHV</string>
+                    <string>Contents/MacOS/SMCRadeonSensors</string>
                     <key>MaxKernel</key>
                     <string></string>
                     <key>MinKernel</key>
@@ -574,51 +574,15 @@
                     <key>Arch</key>
                     <string>Any</string>
                     <key>BundlePath</key>
-                    <string>AirportItlwm-Monterey.kext</string>
+                    <string>RTL812xLucy.kext</string>
                     <key>Comment</key>
-                    <string>V2.3.0</string>
+                    <string>V1.1.302</string>
                     <key>Enabled</key>
                     <true/>
                     <key>ExecutablePath</key>
-                    <string>Contents/MacOS/AirportItlwm</string>
+                    <string>Contents/MacOS/RTL812xLucy</string>
                     <key>MaxKernel</key>
-                    <string>21.99.99</string>
-                    <key>MinKernel</key>
-                    <string>21.0.0</string>
-                    <key>PlistPath</key>
-                    <string>Contents/Info.plist</string>
-                </dict>
-                <dict>
-                    <key>Arch</key>
-                    <string>Any</string>
-                    <key>BundlePath</key>
-                    <string>AirportItlwm-Ventura.kext</string>
-                    <key>Comment</key>
-                    <string>V2.3.0</string>
-                    <key>Enabled</key>
-                    <true/>
-                    <key>ExecutablePath</key>
-                    <string>Contents/MacOS/AirportItlwm</string>
-                    <key>MaxKernel</key>
-                    <string>22.99.99</string>
-                    <key>MinKernel</key>
-                    <string>22.0.0</string>
-                    <key>PlistPath</key>
-                    <string>Contents/Info.plist</string>
-                </dict>
-                <dict>
-                    <key>Arch</key>
-                    <string>Any</string>
-                    <key>BundlePath</key>
-                    <string>BlueToolFixup.kext</string>
-                    <key>Comment</key>
-                    <string>V2.7.1</string>
-                    <key>Enabled</key>
-                    <true/>
-                    <key>ExecutablePath</key>
-                    <string>Contents/MacOS/BlueToolFixup</string>
-                    <key>MaxKernel</key>
-                    <string></string>
+                    <string>24.99.99</string>
                     <key>MinKernel</key>
                     <string></string>
                     <key>PlistPath</key>
@@ -630,7 +594,7 @@
                     <key>BundlePath</key>
                     <string>IntelBluetoothFirmware.kext</string>
                     <key>Comment</key>
-                    <string>V2.4.0</string>
+                    <string>V2.5.1</string>
                     <key>Enabled</key>
                     <true/>
                     <key>ExecutablePath</key>
@@ -646,13 +610,13 @@
                     <key>Arch</key>
                     <string>Any</string>
                     <key>BundlePath</key>
-                    <string>IntelBTPatcher.kext</string>
+                    <string>BlueToolFixup.kext</string>
                     <key>Comment</key>
-                    <string>V2.4.0</string>
+                    <string>V2.7.3</string>
                     <key>Enabled</key>
                     <true/>
                     <key>ExecutablePath</key>
-                    <string>Contents/MacOS/IntelBTPatcher</string>
+                    <string>Contents/MacOS/BlueToolFixup</string>
                     <key>MaxKernel</key>
                     <string></string>
                     <key>MinKernel</key>
@@ -664,17 +628,35 @@
                     <key>Arch</key>
                     <string>Any</string>
                     <key>BundlePath</key>
-                    <string>SMCProcessorAMD.kext</string>
+                    <string>BTLEAdvFixup-Sequoia.kext</string>
                     <key>Comment</key>
-                    <string>V1.0.1</string>
+                    <string>V0.9.3</string>
                     <key>Enabled</key>
                     <true/>
                     <key>ExecutablePath</key>
-                    <string>Contents/MacOS/SMCProcessorAMD</string>
+                    <string>Contents/MacOS/BTLEAdvFixup</string>
                     <key>MaxKernel</key>
-                    <string></string>
+                    <string>24.99.99</string>
                     <key>MinKernel</key>
-                    <string></string>
+                    <string>24.0.0</string>
+                    <key>PlistPath</key>
+                    <string>Contents/Info.plist</string>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>Any</string>
+                    <key>BundlePath</key>
+                    <string>ForbiddenItlwm-Sequoia.kext</string>
+                    <key>Comment</key>
+                    <string>V0.6.0</string>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>ExecutablePath</key>
+                    <string>Contents/MacOS/ForbiddenItlwm</string>
+                    <key>MaxKernel</key>
+                    <string>24.99.99</string>
+                    <key>MinKernel</key>
+                    <string>24.0.0</string>
                     <key>PlistPath</key>
                     <string>Contents/Info.plist</string>
                 </dict>
@@ -684,7 +666,7 @@
                     <key>BundlePath</key>
                     <string>NootedRed.kext</string>
                     <key>Comment</key>
-                    <string>V1.0.0</string>
+                    <string>V1.2.6</string>
                     <key>Enabled</key>
                     <true/>
                     <key>ExecutablePath</key>
@@ -700,17 +682,35 @@
                     <key>Arch</key>
                     <string>Any</string>
                     <key>BundlePath</key>
-                    <string>SMCRadeonSensors.kext</string>
+                    <string>AppleALC.kext</string>
                     <key>Comment</key>
-                    <string>V2.4.0</string>
+                    <string>V1.9.8</string>
                     <key>Enabled</key>
                     <true/>
                     <key>ExecutablePath</key>
-                    <string>Contents/MacOS/SMCRadeonSensors</string>
+                    <string>Contents/MacOS/AppleALC</string>
                     <key>MaxKernel</key>
                     <string></string>
                     <key>MinKernel</key>
                     <string></string>
+                    <key>PlistPath</key>
+                    <string>Contents/Info.plist</string>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>Any</string>
+                    <key>BundlePath</key>
+                    <string>SimpleHDA.kext</string>
+                    <key>Comment</key>
+                    <string>V1.0.1</string>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>ExecutablePath</key>
+                    <string>Contents/MacOS/SimpleHDA</string>
+                    <key>MaxKernel</key>
+                    <string></string>
+                    <key>MinKernel</key>
+                    <string>25.0.0</string>
                     <key>PlistPath</key>
                     <string>Contents/Info.plist</string>
                 </dict>
@@ -865,7 +865,7 @@
                     <key>Mask</key>
                     <data>//3/AAA=</data>
                     <key>MaxKernel</key>
-                    <string>24.99.99</string>
+                    <string>25.99.99</string>
                     <key>MinKernel</key>
                     <string>22.4.0</string>
                     <key>Replace</key>
@@ -895,7 +895,7 @@
                     <key>Mask</key>
                     <data></data>
                     <key>MaxKernel</key>
-                    <string>24.99.99</string>
+                    <string>25.99.99</string>
                     <key>MinKernel</key>
                     <string>17.0.0</string>
                     <key>Replace</key>
@@ -925,7 +925,7 @@
                     <key>Mask</key>
                     <data></data>
                     <key>MaxKernel</key>
-                    <string>24.99.99</string>
+                    <string>25.99.99</string>
                     <key>MinKernel</key>
                     <string>17.0.0</string>
                     <key>Replace</key>
@@ -955,7 +955,7 @@
                     <key>Mask</key>
                     <data></data>
                     <key>MaxKernel</key>
-                    <string>24.99.99</string>
+                    <string>25.99.99</string>
                     <key>MinKernel</key>
                     <string>17.0.0</string>
                     <key>Replace</key>
@@ -985,7 +985,7 @@
                     <key>Mask</key>
                     <data></data>
                     <key>MaxKernel</key>
-                    <string>24.99.99</string>
+                    <string>25.99.99</string>
                     <key>MinKernel</key>
                     <string>17.0.0</string>
                     <key>Replace</key>
@@ -1015,7 +1015,7 @@
                     <key>Mask</key>
                     <data></data>
                     <key>MaxKernel</key>
-                    <string>24.99.99</string>
+                    <string>25.99.99</string>
                     <key>MinKernel</key>
                     <string>17.0.0</string>
                     <key>Replace</key>
@@ -1061,7 +1061,7 @@
                     <key>Base</key>
                     <string></string>
                     <key>Comment</key>
-                    <string>algrey | _cpuid_set_generic_info | Disable check to allow leaf7 | 15.x</string>
+                    <string>algrey | _cpuid_set_generic_info | Disable check to allow leaf7 | 15.0+</string>
                     <key>Count</key>
                     <integer>1</integer>
                     <key>Enabled</key>
@@ -1075,7 +1075,7 @@
                     <key>Mask</key>
                     <data></data>
                     <key>MaxKernel</key>
-                    <string>24.99.99</string>
+                    <string>25.99.99</string>
                     <key>MinKernel</key>
                     <string>24.0.0</string>
                     <key>Replace</key>
@@ -1135,7 +1135,7 @@
                     <key>Mask</key>
                     <data>AAAAAAAA/////w==</data>
                     <key>MaxKernel</key>
-                    <string>24.99.99</string>
+                    <string>25.99.99</string>
                     <key>MinKernel</key>
                     <string>21.0.0</string>
                     <key>Replace</key>
@@ -1179,7 +1179,7 @@
                     <key>Arch</key>
                     <string>x86_64</string>
                     <key>Base</key>
-                    <string>_cpuid_set_info</string>
+                    <string>_cpuid_set_info </string>
                     <key>Comment</key>
                     <string>algrey | _cpuid_set_cpufamily | Force CPUFAMILY_INTEL_PENRYN | 11.3+</string>
                     <key>Count</key>
@@ -1195,7 +1195,7 @@
                     <key>Mask</key>
                     <data>//8AAAAA//8=</data>
                     <key>MaxKernel</key>
-                    <string>24.99.99</string>
+                    <string>25.99.99</string>
                     <key>MinKernel</key>
                     <string>20.4.0</string>
                     <key>Replace</key>
@@ -1225,7 +1225,7 @@
                     <key>Mask</key>
                     <data></data>
                     <key>MaxKernel</key>
-                    <string>24.99.99</string>
+                    <string>25.99.99</string>
                     <key>MinKernel</key>
                     <string>17.0.0</string>
                     <key>Replace</key>
@@ -1255,7 +1255,7 @@
                     <key>Mask</key>
                     <data></data>
                     <key>MaxKernel</key>
-                    <string>24.99.99</string>
+                    <string>25.99.99</string>
                     <key>MinKernel</key>
                     <string>17.0.0</string>
                     <key>Replace</key>
@@ -1285,7 +1285,7 @@
                     <key>Mask</key>
                     <data>8P//8A==</data>
                     <key>MaxKernel</key>
-                    <string>24.99.99</string>
+                    <string>25.99.99</string>
                     <key>MinKernel</key>
                     <string>21.0.0</string>
                     <key>Replace</key>
@@ -1305,7 +1305,7 @@
                     <key>Count</key>
                     <integer>1</integer>
                     <key>Enabled</key>
-                    <false/>
+                    <true/>
                     <key>Find</key>
                     <data>hAB1Sw==</data>
                     <key>Identifier</key>
@@ -1315,7 +1315,7 @@
                     <key>Mask</key>
                     <data>/wD//w==</data>
                     <key>MaxKernel</key>
-                    <string>24.99.99</string>
+                    <string>25.99.99</string>
                     <key>MinKernel</key>
                     <string>22.0.0</string>
                     <key>Replace</key>
@@ -1345,7 +1345,7 @@
                     <key>Mask</key>
                     <data>/wAAD/////8AAP8AAAD/AAAAAAA=</data>
                     <key>MaxKernel</key>
-                    <string>24.99.99</string>
+                    <string>25.99.99</string>
                     <key>MinKernel</key>
                     <string>21.0.0</string>
                     <key>Replace</key>
@@ -1375,7 +1375,7 @@
                     <key>Mask</key>
                     <data>SAAA8P////8AAAAAAA==</data>
                     <key>MaxKernel</key>
-                    <string>24.99.99</string>
+                    <string>25.99.99</string>
                     <key>MinKernel</key>
                     <string>21.0.0</string>
                     <key>Replace</key>
@@ -1451,6 +1451,96 @@
                     <key>Base</key>
                     <string></string>
                     <key>Comment</key>
+                    <string>Algrey / Zormeister | _mtrr_update_action | Fix PAT | 15.0+</string>
+                    <key>Count</key>
+                    <integer>0</integer>
+                    <key>Enabled</key>
+                    <false/>
+                    <key>Find</key>
+                    <data>icCB4v//AP+BygAAAAAPMA==</data>
+                    <key>Identifier</key>
+                    <string>kernel</string>
+                    <key>Limit</key>
+                    <integer>0</integer>
+                    <key>Mask</key>
+                    <data>/////////////wAAAAD//w==</data>
+                    <key>MaxKernel</key>
+                    <string>25.99.99</string>
+                    <key>MinKernel</key>
+                    <string>24.0.0</string>
+                    <key>Replace</key>
+                    <data>icC4BgEHALoGAQcADzCQkA==</data>
+                    <key>ReplaceMask</key>
+                    <data></data>
+                    <key>Skip</key>
+                    <integer>0</integer>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>x86_64</string>
+                    <key>Base</key>
+                    <string></string>
+                    <key>Comment</key>
+                    <string>Shaneee / Zormeister | _mtrr_update_action | Fix PAT | 15.0+</string>
+                    <key>Count</key>
+                    <integer>0</integer>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Find</key>
+                    <data>icCB4v//AP+BygAAAAAPMA==</data>
+                    <key>Identifier</key>
+                    <string>kernel</string>
+                    <key>Limit</key>
+                    <integer>0</integer>
+                    <key>Mask</key>
+                    <data>/////////////wAAAAD//w==</data>
+                    <key>MaxKernel</key>
+                    <string>25.99.99</string>
+                    <key>MinKernel</key>
+                    <string>24.0.0</string>
+                    <key>Replace</key>
+                    <data>icC4BgYGBroGBgYGDzCQkA==</data>
+                    <key>ReplaceMask</key>
+                    <data></data>
+                    <key>Skip</key>
+                    <integer>0</integer>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>x86_64</string>
+                    <key>Base</key>
+                    <string></string>
+                    <key>Comment</key>
+                    <string>algrey | _cpuid_set_generic_info | Disable check to allow leaf7 | 15.x</string>
+                    <key>Count</key>
+                    <integer>1</integer>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Find</key>
+                    <data>AAUPgg==</data>
+                    <key>Identifier</key>
+                    <string>kernel</string>
+                    <key>Limit</key>
+                    <integer>0</integer>
+                    <key>Mask</key>
+                    <data></data>
+                    <key>MaxKernel</key>
+                    <string>24.99.99</string>
+                    <key>MinKernel</key>
+                    <string>24.0.0</string>
+                    <key>Replace</key>
+                    <data>AAAPgg==</data>
+                    <key>ReplaceMask</key>
+                    <data></data>
+                    <key>Skip</key>
+                    <integer>0</integer>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>x86_64</string>
+                    <key>Base</key>
+                    <string></string>
+                    <key>Comment</key>
                     <string>Algrey / Zormeister | _mtrr_update_action | Fix PAT | 15+</string>
                     <key>Count</key>
                     <integer>0</integer>
@@ -1502,6 +1592,876 @@
                     <data>icC4BgYGBroGBgYGDzCQkA==</data>
                     <key>ReplaceMask</key>
                     <data></data>
+                    <key>Skip</key>
+                    <integer>0</integer>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>x86_64</string>
+                    <key>Base</key>
+                    <string>__ZN15AppleEthernetRL18initializeFirmwareEv</string>
+                    <key>Comment</key>
+                    <string>laobamac | Skip Apple firmware services and keep native MAC initialization</string>
+                    <key>Count</key>
+                    <integer>1</integer>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Find</key>
+                    <data>VUiJ5UFXQVZTSIPsSEiLBQAAAABIiwBIiUXgSINluABIg2WwAEiDZdAASINlyABIiftIg2XAAOgAAAAASInf6AAAAAD2g0gCAAABdCRIi7NQAgAASI09AAAAAEiNFQAAAAC5nAAAAEGJwDHA6AAAAAD2g1wFAAABD4RGAwAATI2zXQUAAGo0WkiJ30yJ9ugAAAAAhcAPhQ4DAABIi7sgAgAASIsHSI01AAAAAP+QuAIAAEiLs1ACAABIhcB0S0iNPQAAAABIjRUAAAAAuaYAAAAxwOgAAAAAi7NYBQAASInf6AAAAABIhcB0f0mJx0iJx+gAAAAA9oOSBQAAAXQfTIn/6AAAAADrNkiNPQAAAABIjRUAAAAAucEAAADrZkiLs1ACAABIjT0AAAAASI0VAAAAALmyAAAAMcDoAAAAAEyJ/+gAAAAASYsHTIn//1AoajRaSInfTIn26AAAAACJwTHAhckPhT8CAABIi7NQAgAASI09AAAAAEiNFQAAAAC5vwAAADHA6AAAAAD2g0gCAAABdC9Ii7NQAgAARIuDXQUAAESLi2EFAABIjT0AAAAASI0VAAAAALnEAAAAMcDoAAAAAEGDPnh1EIO7YQUAAHh1B8aDkQUAAAEPtotpBQAARA+2g2oFAABED7eLawUAAIuDbQUAAIkEJEiNFQAAAABMjXXAahheTIn3McDoAAAAAEHGRhcA9oNIAgAAAXQlSIuzUAIAAEiNPQAAAABIjRUAAAAATI1FwLnLAAAAMcDoAAAAAEiLA0iNNQAAAABIid9MifL/kHACAAAPtotxBQAARA+2g3IFAABED7eLcwUAAIuDdQUAAIkEJEiNFQAAAABqGF5MifcxwOgAAAAAQcZGFwD2g0gCAAABdCVIi7NQAgAASI09AAAAAEiNFQAAAABMjUXAuc8AAAAxwOgAAAAASIsDSI01AAAAAEiJ30yJ8v+QcAIAAA+2i3kFAABED7aDegUAAEQPt4t7BQAAi4N9BQAAiQQkSI0VAAAAAGoYXkyJ9zHA6AAAAABBxkYXAPaDSAIAAAF0JUiLs1ACAABIjT0AAAAASI0VAAAAAEyNRcC50wAAADHA6AAAAABIiwNIjTUAAAAASI1VwEiJ3/+QcAIAAPaDkQUAAAF0O0iLA0iJ374AgAAA/5DoCwAAhcB0CfaDSAIAAAJ1T0iLA0iNdbBIid//kPgLAACFwHQJ9oNIAgAAAnVYSIsDSI11sEiJ3/+Q4AsAAEiLDQAAAABIiwlIO03gdV5Ig8RIW0FeQV9dw7jHAgDg695Ii7NQAgAASI09AAAAAEiNFQAAAAC53AAAAEGJwDHA6AAAAADri0iLs1ACAABIjT0AAAAASI0VAAAAALnhAAAAQYnAMcDoAAAAAOuC6AAAAAA=</data>
+                    <key>Identifier</key>
+                    <string>com.apple.driver.AppleEthernetRL</string>
+                    <key>Limit</key>
+                    <integer>1052</integer>
+                    <key>Mask</key>
+                    <data>/////////////////////wAAAAD///////////////////////////////////////////////8AAAAA/////wAAAAD/////////////////////////AAAAAP///wAAAAD//////////////wAAAAD///////////////////////////////////////8AAAAA////////////////////////////AAAAAP///////////////////////////wAAAAD///8AAAAA//////////8AAAAA/////////////wAAAAD///////////////8AAAAA/////////////////wAAAAD//////wAAAAD///8AAAAA//////////////////////8AAAAA////AAAAAP//////////AAAAAP////8AAAAA/////////////////////////wAAAAD/////////////////////////////AAAAAP///wAAAAD//////////wAAAAD///////////////////////////////////////////8AAAAA////AAAAAP//////////AAAAAP///////////////////////////////////////////////////////////////////////////wAAAAD/////////////////AAAAAP///////////////////////////////wAAAAD///8AAAAA////////////////AAAAAP///////wAAAAD//////////////////////////////////////////////////////////////wAAAAD///////////8AAAAA////////////////////////////////AAAAAP///wAAAAD///////////////8AAAAA////////AAAAAP//////////////////////////////////////////////////////////////AAAAAP///////////wAAAAD///////////////////////////////8AAAAA////AAAAAP///////////////wAAAAD///////8AAAAA/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wAAAAD/////////////////////////////////////////////////AAAAAP///wAAAAD//////////////wAAAAD///////////////8AAAAA////AAAAAP//////////////AAAAAP///wAAAAA=</data>
+                    <key>MaxKernel</key>
+                    <string>26.99.99</string>
+                    <key>MinKernel</key>
+                    <string>25.0.0</string>
+                    <key>Replace</key>
+                    <data>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxwIiDXAUAAOkrAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</data>
+                    <key>ReplaceMask</key>
+                    <data>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/////////////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</data>
+                    <key>Skip</key>
+                    <integer>0</integer>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>x86_64</string>
+                    <key>Base</key>
+                    <string>__ZN15AppleEthernetRL22resolveEnabledFeaturesEv</string>
+                    <key>Comment</key>
+                    <string>laobamac | Force AVB off and select legacy 4DW queues</string>
+                    <key>Count</key>
+                    <integer>1</integer>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Find</key>
+                    <data>SY220AQAAEiNPQAAAABqBFroAAAAAA==</data>
+                    <key>Identifier</key>
+                    <string>com.apple.driver.AppleEthernetRL</string>
+                    <key>Limit</key>
+                    <integer>176</integer>
+                    <key>Mask</key>
+                    <data>/////////////wAAAAD/////AAAAAA==</data>
+                    <key>MaxKernel</key>
+                    <string>26.99.99</string>
+                    <key>MinKernel</key>
+                    <string>25.0.0</string>
+                    <key>Replace</key>
+                    <data>AAAAAAAAAAAAAAAAAAAAAAAxwIkGkA==</data>
+                    <key>ReplaceMask</key>
+                    <data>AAAAAAAAAAAAAAAAAAAAAAD//////w==</data>
+                    <key>Skip</key>
+                    <integer>0</integer>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>x86_64</string>
+                    <key>Base</key>
+                    <string>__ZN15AppleEthernetRL13initializeAVBEv</string>
+                    <key>Comment</key>
+                    <string>laobamac | Skip PTP delay mapping when AVB queues are disabled</string>
+                    <key>Count</key>
+                    <integer>1</integer>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Find</key>
+                    <data>VUiJ5UFXQVZTUEiJ+0iLBQAAAABIjT0AAAAA/5CIAAAASYnGSIsATIn3/5CIAAAAhMAPhIkAAABJi34QSI01AAAAALoQAQAA6AAAAAC/AQAAAOgAAAAASImD4AQAAEiLCEiJx0yJ9v+RuAEAAEmLBkyJ9/9QKIO71AQAAAB0LUyNsygBAABFMf9FD7b/TIn3RIn+uh8AAADoAAAAAEH+x0EPtsc5g9QEAAB33UiJ3+gAAAAAMcBIg8QIW0FeQV9dw0yJ9+gAAAAAkA==</data>
+                    <key>Identifier</key>
+                    <string>com.apple.driver.AppleEthernetRL</string>
+                    <key>Limit</key>
+                    <integer>202</integer>
+                    <key>Mask</key>
+                    <data>/////////////////////wAAAAD///8AAAAA////////////////////////////////////////////////AAAAAP///////wAAAAD///////8AAAAA////////////////////////////////////////////////////////////////////////////////////////AAAAAP////////////////////////8AAAAA//////////////////////8AAAAA/w==</data>
+                    <key>MaxKernel</key>
+                    <string>26.99.99</string>
+                    <key>MinKernel</key>
+                    <string>25.0.0</string>
+                    <key>Replace</key>
+                    <data>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</data>
+                    <key>ReplaceMask</key>
+                    <data>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</data>
+                    <key>Skip</key>
+                    <integer>0</integer>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>x86_64</string>
+                    <key>Base</key>
+                    <string>__ZN15AppleEthernetRL5startEP9IOService</string>
+                    <key>Comment</key>
+                    <string>laobamac | Enable legacy interrupts for RTL8125 A/B/BP/D and RTL8126A</string>
+                    <key>Count</key>
+                    <integer>1</integer>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Find</key>
+                    <data>TI1l0EHHBCQAAAAASI09AAAAAEyJ5roEAAAA6AAAAABBiwQkg/gCdFE=</data>
+                    <key>Identifier</key>
+                    <string>com.apple.driver.AppleEthernetRL</string>
+                    <key>Limit</key>
+                    <integer>1164</integer>
+                    <key>Mask</key>
+                    <data>////////////////////AAAAAP///////////wAAAAD///////////8=</data>
+                    <key>MaxKernel</key>
+                    <string>26.99.99</string>
+                    <key>MinKernel</key>
+                    <string>25.0.0</string>
+                    <key>Replace</key>
+                    <data>TI1l0INl0ACKg2EBAAAsUDwHdgYsCjwCdwfGgw8CAAAAMcCQAAAAAAA=</data>
+                    <key>ReplaceMask</key>
+                    <data>////////////////////////////////////////////////AAAAAAA=</data>
+                    <key>Skip</key>
+                    <integer>0</integer>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>x86_64</string>
+                    <key>Base</key>
+                    <string>__ZN15AppleEthernetRL20initializeIrqMappingEv</string>
+                    <key>Comment</key>
+                    <string>laobamac | Preserve IRQ resources and bypass remapper in legacy mode</string>
+                    <key>Count</key>
+                    <integer>1</integer>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Find</key>
+                    <data>VUiJ5UFXQVZBVFNIiftIjT0AAAAAvlABAADoAAAAAEiJgzACAABBvr0CAOBIhcAPhIUCAABED7aDYQEAAEGNQJyD+AJzd0i4AAAAIAEAAABIiYMwBgAASLgAAQAAAAABAEiJgzgGAABIuAEAAAAAAAIASImDQAYAAEi4AgAAAAAAAQBIiYNIBgAASI0FAAAAAGoIQVhqKFpIi7swAgAATAHHSInRSInG86RIg8AoSYPAOEmB+FgBAAB13et7QYP4WHV6SLgAAAAgAQAAAEiJgzAGAABIuAAAAAgAAAEASImDOAYAAEi4AQAAAAAAAgBIiYNABgAASLgCAAAAAAABAEiJg0gGAABIjQUAAAAAaghBWGooWkiLuzACAABMAcdIidFIicbzpEiDwChJg8A4SYH4WAEAAHXdRTHk6ydIi7NQAgAASI09AAAAAEiNFQAAAAC5lgAAADHA6AAAAABBvMcCAOCLgzQGAAALgzgGAAALgzwGAAALg0QGAAANAAAAgImDUAYAAIuDQAYAAAuDSAYAAAuDTAYAAImDVAYAAEiLA0iJ3/+QiAYAAEmJx0iLAEyJ//9QIEiLgzACAABMiXgwSYsHTIn//1AgSIuDMAIAAEyJuEgBAADoAAAAAEmJx0iLAEyJ//9QIEiLgzACAABMiXhoSYsHTIn//1AgSIuDMAIAAEyJuKAAAABJiwdMif//UCBIi4MwAgAATIm42AAAAEmLB0yJ//9QIEiLgzACAABMibgQAQAASYsHTIn//1AoSI0FAAAAAEiJg/gGAABIjQUAAAAASImDAAcAAEiNBQAAAABIiYMIBwAASI0FAAAAAEiJgxAHAABIjQUAAAAASImDGAcAAEiNBQAAAABIiYMgBwAASIu7IAIAAOiFyv//SImD8AYAAEiFwHQLSInf6IcFAABFieZEifBbQVxBXkFfXcM=</data>
+                    <key>Identifier</key>
+                    <string>com.apple.driver.AppleEthernetRL</string>
+                    <key>Limit</key>
+                    <integer>710</integer>
+                    <key>Mask</key>
+                    <data>//////////////////////8AAAAA////////AAAAAP//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////AAAAAP////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AAAAA////////////////////////////////////////////////////////////////////////////AAAAAP///wAAAAD//////////wAAAAD/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////AAAAAP//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////AAAAAP////////////8AAAAA/////////////wAAAAD/////////////AAAAAP////////////8AAAAA/////////////wAAAAD///////////////////////////////////////////////////////////////////////8=</data>
+                    <key>MaxKernel</key>
+                    <string>26.99.99</string>
+                    <key>MinKernel</key>
+                    <string>25.0.0</string>
+                    <key>Replace</key>
+                    <data>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABFMeSAuw8CAAAAdBtBvMcCAODrE1NIi7sgAgAA6MrL//9Iid9bw5AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgLsPAgAAAHQW6Kz+//9IiYPwBgAASIXAdAnoiAUAAEWJ5pAAAAAAAAAAAAAAAAA=</data>
+                    <key>ReplaceMask</key>
+                    <data>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///////////////////////////////////////////////////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//////////////////////////////////////////////8AAAAAAAAAAAAAAAA=</data>
+                    <key>Skip</key>
+                    <integer>0</integer>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>x86_64</string>
+                    <key>Base</key>
+                    <string>__Z27re_get_platform_mac_addressP8re_softcPh</string>
+                    <key>Comment</key>
+                    <string>laobamac | Preserve hardware MAC when platform MAC is absent</string>
+                    <key>Count</key>
+                    <integer>1</integer>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Find</key>
+                    <data>hcB0PkGLBg==</data>
+                    <key>Identifier</key>
+                    <string>com.apple.driver.AppleEthernetRL</string>
+                    <key>Limit</key>
+                    <integer>201</integer>
+                    <key>Mask</key>
+                    <data></data>
+                    <key>MaxKernel</key>
+                    <string>26.99.99</string>
+                    <key>MinKernel</key>
+                    <string>25.0.0</string>
+                    <key>Replace</key>
+                    <data>hcB0M0GLBg==</data>
+                    <key>ReplaceMask</key>
+                    <data></data>
+                    <key>Skip</key>
+                    <integer>0</integer>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>x86_64</string>
+                    <key>Base</key>
+                    <string>__ZNK15AppleEthernetRL14newModelStringEv</string>
+                    <key>Comment</key>
+                    <string>laobamac | Resolve RTL8125 RTL8126 RTL8127 models from actual PCI device ID</string>
+                    <key>Count</key>
+                    <integer>1</integer>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Find</key>
+                    <data>D7eHagEAADHbPSaBAAB/Fz13dwAAdCc9JYEAAHU4SI09AAAAAOsnPSeBAAB0GT2IiAAAdSFIjT0AAAAA6xBIjT0AAAAA6wdIjT0AAAAA6AAAAABIicM=</data>
+                    <key>Identifier</key>
+                    <string>com.apple.driver.AppleEthernetRL</string>
+                    <key>Limit</key>
+                    <integer>366</integer>
+                    <key>Mask</key>
+                    <data>////////////////////////////////////////////AAAAAP////////////////////////8AAAAA//////8AAAAA//////8AAAAA/wAAAAD///8=</data>
+                    <key>MaxKernel</key>
+                    <string>26.99.99</string>
+                    <key>MinKernel</key>
+                    <string>25.0.0</string>
+                    <key>Replace</key>
+                    <data>AAAAZgAAAAAAAAAAAAAAAAAmgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</data>
+                    <key>ReplaceMask</key>
+                    <data>AAAA/wAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</data>
+                    <key>Skip</key>
+                    <integer>0</integer>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>x86_64</string>
+                    <key>Base</key>
+                    <string></string>
+                    <key>Comment</key>
+                    <string>laobamac | Provide the RTL8126 5 GbE model string</string>
+                    <key>Count</key>
+                    <integer>1</integer>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Find</key>
+                    <data>ODEyNUNQQSAoMi41IEdiRSkA</data>
+                    <key>Identifier</key>
+                    <string>com.apple.driver.AppleEthernetRL</string>
+                    <key>Limit</key>
+                    <integer>0</integer>
+                    <key>Mask</key>
+                    <data></data>
+                    <key>MaxKernel</key>
+                    <string>26.99.99</string>
+                    <key>MinKernel</key>
+                    <string>25.0.0</string>
+                    <key>Replace</key>
+                    <data>ODEyNiAoNSBHYkUpAAAAAAAA</data>
+                    <key>ReplaceMask</key>
+                    <data></data>
+                    <key>Skip</key>
+                    <integer>0</integer>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>x86_64</string>
+                    <key>Base</key>
+                    <string>__ZN15AppleEthernetRL25dequeueRx4DWLegacyPacketsEP26IOSkywalkRxSubmissionQueuePKP15IOSkywalkPacketjRN6__rl__5EthRQE</string>
+                    <key>Comment</key>
+                    <string>laobamac | Use mapped or physical DMA segments for 4DW packet queues</string>
+                    <key>Count</key>
+                    <integer>1</integer>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Find</key>
+                    <data>VUiJ5UFXQVZBVUFUU0iD7DhNicJBic1Fi3AURYtAHEuNHMBEi6Tf1AMAAPaHSQIAAARMiVXASIl9yA+FLwEAAEiNh9ADAABIiUW4QYP9AUGD1QBIjQTfSAXQAwAASIlFsEUx/0yJbaBIiVWoToss+kmLAkSJ8UyJLMhIx0XQAAAAAEmLRQBMie9IjXXQugEAAAD/kCABAABJi0UATInv/5BQAQAAQYnFSIt90OgAAAAASInDSIt90OgAAAAASIsISInH/5FQAQAASIt1yEyLVcBBD7fNTIttoEgB2UgBwUiLfbBIi0cgRIniSMHiBEUxwESJRBAESIlMEAhB/8QxyUQ7ZwwPlMFFD0TgweEeC46UAQAAgckAAACAiQwQSItVqEH/xkQjdxBJ/8dNOf0PhTj///9Bi0IcSMHgA0iNBMBIi024RDlkAQR0CUSJZAEERYlyFPaGSQIAAAR1VESJ6EiDxDhbQVxBXUFeQV9dw0iLt1ACAABFi0oQSIPsCEiNPQAAAABJiddIjRUAAAAAuWQAAAAxwEFW6AAAAABMifpIi33ITItVwEiDxBDpj/7//0iLtlACAABFi0IcRYtKEEWLUhRIjT0AAAAASI0VAAAAALmMAAAAMcBBVUFS6AAAAABIg8QQ6XL///+QVUiJ5UFXQVZBVUFUU0iD7DhNicJBic1Fi3AURYtAHEuNHMBEi6Tf1AMAAPaHSQIAAARMiVXASIl9yA+FOgEAAEiNh9ADAABIiUW4QYP9AUGD1QBIjQTfSAXQAwAASIlFsEUx/0yJbaBIiVWoToss+kmLAkSJ8UyJLMgxwEiJRdBJi0UATInvSI110LoBAAAA/5AgAQAASYtFAEyJ7/+QUAEAAEGJxUiLfdDoAAAAAEiJw0iLfdDoAAAAAEiLCEiJx/+RUAEAAEiLdchMi1XAQQ+3zUyLbaBIAdlIAcFIi32wSItHIESJ4kjB4gVFMcBMiQQQTIlEEAhIiUwQEESJRBAYRTHAQf/EMclEO2cMD5TBRQ9E4MHhHguOlAEAAIHJAAAAgIlMEBxIi1WoQf/GRCN3EEn/x005/Q+FLf///0GLQhxIweADSI0EwEiLTbhEOWQBBHQJRIlkAQRFiXIU9oZJAgAABHVURInoSIPEOFtBXEFdQV5BX13DSIu3UAIAAEWLShBIg+wISI09AAAAAEmJ10iNFQAAAAC5lwAAADHAQVboAAAAAEyJ+kiLfchMi1XASIPEEOmE/v//SIu2UAIAAEWLQhxFi0oQRYtSFEiNPQAAAABIjRUAAAAAucQAAAAxwEFVQVLoAAAAAEiDxBDpcv///1VIieVBV0FWQVVBVFNIg+w4iVXQiU20ichIjQzASI0Uz0iBwtADAACLAjtCCHUyRIucz9QDAADHRdQAAAAAiQJEiVoEi1IQi3W06AAAAACLRdRIg8Q4W0FcQV1BXkFfXcNJifJFMcnHRdQAAAAASIl9wEiJVchBicNMi3IgQYnHScHnBUOLXD4cSIldqIHj/z8AAInGweYLTIunyAUAAEkB9ESLbdBBKd1zQ/aHSgIAABB0cUiLt1ACAABIjT0AAAAASI0VAAAAALnnAAAAMcBMidNNid3oAAAAAE2J60UxyUmJ2kiLVchIi33A6zdIA7fQBQAATInXSInaTIlVuEyJXaDoAAAAAEyLXaBFMclMi1W4SItVyEiLfcBJAdoBXdREiW3QTItFqEEPuuAUcwn2h0oCAAAQdUdNAf5NiQ5NiU4ITYlmEEHHRhgAAAAAi0IM/8gxyUE5ww+UwcHhHoHJAAgAgEGJThxBjUMBI0IQQQ+64BgPg/v+///pvv7//0iLt1ACAABIjT0AAAAASI0VAAAAALnrAAAATIlVuDHATInb6AAAAABJidtMi0WoRTHJTItVuEiLVchIi33A6Xb///8AVUiJ5UFXQVZBVUFUU0iD7FhBic1IiVWYSYn8RYtwFEyJRahBi0AcSI0cwIuE3/gCAACJRdBEi7zf/AIAAIuE3wADAABIiUW49odJAgAAAQ+FeQEAAEGD/QFBg9UATIlloEmNBNxIBfgCAABIiUWwRTHkTIltkEiLRZhKixzgSIsDSInf/5BAAQAAiUXESMdFyAAAAABIiwNIid9IjXXIugEAAAD/kCABAABIiwNIid//kFABAABBicVIi33I6AAAAABIiUWISIt9yOgAAAAASIsISInH/5FQAQAARQ+37UwDbYhJAcVmx0XWAABIi0Wg/4AwBwAASInfSI111ugAAAAAuQAAAACEwHQRD7dF1mbBwAgPt8iByQAAAgBIi32wSItHIESJ+kjB4gQx9kQ7fxCJTBAETIlsEAhAD5TGD674weYeC3XEgc4AAACwiTQQQf/Hi0cQQSHHSIt1qEiLTghEifJmRIk8UUiLDkiJHNFB/8ZBIcZJ/8RMi22QTTnlD4Xw/v//SItFsESJeARIi0WoRIlwFEiLTaCAuccBAAAAdRBIi4FQAQAAZseAkAAAAAEA9oFJAgAAAXVLRInoSIPEWFtBXEFdQV5BX13DSYu0JFACAABIg+wISI09AAAAAEiNFQAAAAC5iQAAAESLRdBFifkxwP91uOgAAAAASIPEEOlO/v//SIuxUAIAAEiNPQAAAABIjRUAAAAAueUAAABEi0XQRYn5McBBVf91uOgAAAAASIPEEOuCVUiJ5UFXQVZBVUFUU0iD7BhIiVXASYn7RYt4EEGLQBxIjQTATI2kx/gCAABFiywkQYtEJASJRdRBi1wkCPaHSQIAAAF1bkmLAE2JwUmLSAhBi1QkEEUx9kSJ7kSJ/0yLBPhFifJMi23AT4lE1QBED7csef/GIdZEOe50BjnedfPrDkH/x0Eh10H/xkQ563XIQYkcJEWJeRBB9oNJAgAAAXVWRInwSIPEGFtBXEFdQV5BX13DSYuzUAIAAEiD7AhIjT0AAAAASI0VAAAAALn0AAAATIlFyEWJ6ESLTdQxwFNNid7oAAAAAEyLRchNifNIg8QQ6U7///9Ji7NQAgAASI09AAAAAEiNFQAAAAC5BwEAAEGJ2ESLTdQxwEFWU+gAAAAASIPEEOl2////</data>
+                    <key>Identifier</key>
+                    <string>com.apple.driver.AppleEthernetRL</string>
+                    <key>Limit</key>
+                    <integer>2316</integer>
+                    <key>Mask</key>
+                    <data>//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AAAAA//////////8AAAAA/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wAAAAD///////8AAAAA/////////////wAAAAD///////////////////////////////////////////////////////8AAAAA////AAAAAP///////////////wAAAAD/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////AAAAAP//////////AAAAAP//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////AAAAAP///////wAAAAD/////////////AAAAAP///////////////////////////////////////////////////////wAAAAD///8AAAAA////////////////AAAAAP///////////////////////////////////////////////////////////////////////////////////////////////////////////////wAAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AAAAA////AAAAAP//////////////////AAAAAP//////////////////////////////////////////////////////AAAAAP////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AAAAA////AAAAAP///////////////////wAAAAD//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wAAAAD///////////8AAAAA//////////////////////////////////////////////////////////////8AAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////AAAAAP///wAAAAD///////////////////////8AAAAA/////////////////////////wAAAAD///8AAAAA//////////////////////////8AAAAA//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AAAAA////AAAAAP//////////////////////////////AAAAAP//////////////////////////////////AAAAAP///wAAAAD///////////////////////8AAAAA////////////</data>
+                    <key>MaxKernel</key>
+                    <string>26.99.99</string>
+                    <key>MinKernel</key>
+                    <string>25.0.0</string>
+                    <key>Replace</key>
+                    <data>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JAhmiTRC/8BBI0YQQYlEJBRMifdIieaLlCQEAgAA6PX5////gzAHAABB/8fppf7//0WF/3QcD674gLvHAQAAAHUQSIuDUAEAAGbHgJAAAAABAESJ+EiBxCgCAABBX0FeQV1BXFtdw5CQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQU0FUQVVBVkGJzkGLQBxIa8BITI2MB/gCAABFixFFi1kQRYtgEDHARDnwc0tFO2AUdEVBi0kIRCnRRCHZdDlJi3AIQg+3HGZBid1FKdVFId10JUQ56XIgSYswSos85kiJPMJKxwTmAAAAAEGJ2kH/xEUh3P/A67BFiRFFiWAQQV5BXUFcW8OQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQ</data>
+                    <key>ReplaceMask</key>
+                    <data>/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wAAAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////</data>
+                    <key>Skip</key>
+                    <integer>0</integer>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>x86_64</string>
+                    <key>Base</key>
+                    <string>__ZN15AppleEthernetRL14startInterfaceEv</string>
+                    <key>Comment</key>
+                    <string>laobamac | Bound packet DMA segments to 4 KiB without bypassing IOMapper</string>
+                    <key>Count</key>
+                    <integer>1</integer>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Find</key>
+                    <data>VUiJ5UFXQVZBVUFUU0iB7PgAAABJif5IiwUAAAAASIsASIlF0EiNPQAAAADoAAAAAEiFwA+EmAQAAEiJw0G/AQAAALkwAQAATIn3SInGugEAAADoAAAAAEGLhowBAACJQ0jHQxQaAAAAuCAAAACJQyhBiYZYAQAASYnYSYHACAEAAEGLhigBAACJgwgBAABBD7eGLAEAAEiJnWj///9miYMMAQAASYu2UAIAAEiNPQAAAABIjRUAAAAATI0NAAAAAEUx7bnmAAAAMcDoAAAAAEiNhfD+//9MiWgITIloGEyJaChMiWggTIloEEiLDQAAAABIiQjGQAhAx0AYAAAAAESJeChJi44oAgAASIlIMA==</data>
+                    <key>Identifier</key>
+                    <string>com.apple.driver.AppleEthernetRL</string>
+                    <key>Limit</key>
+                    <integer>271</integer>
+                    <key>Mask</key>
+                    <data>//////////////////////////////////8AAAAA/////////////wAAAAD/AAAAAP//////////////////////////////////////////////AAAAAP///////////////////////////////////////////////////////////////////////////////////////////////////////////////////wAAAAD///8AAAAA////AAAAAP//////////////AAAAAP///////////////////////////////////////wAAAAD//////////////////////////////////////w==</data>
+                    <key>MaxKernel</key>
+                    <string>26.99.99</string>
+                    <key>MinKernel</key>
+                    <string>25.0.0</string>
+                    <key>Replace</key>
+                    <data>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAx0AQABAAAAAAAAAAAAAAAAAAAAAAAA==</data>
+                    <key>ReplaceMask</key>
+                    <data>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/////////wAAAAAAAAAAAAAAAAAAAA==</data>
+                    <key>Skip</key>
+                    <integer>0</integer>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>x86_64</string>
+                    <key>Base</key>
+                    <string>__ZN15AppleEthernetRL9allocRingERN6__rl__7EthRingE</string>
+                    <key>Comment</key>
+                    <string>laobamac | Allocate contiguous descriptor rings and reject incomplete DMA ranges</string>
+                    <key>Count</key>
+                    <integer>1</integer>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Find</key>
+                    <data>VUiJ5UFXQVZBVFNIg+wgSYn0SIn7SMdF0AAAAADHRdwBAAAA9odIAgAAAQ+FvQEAADHASIlFyEiJRcBBi1QkGEEPr1QkDIHC/w8AAIHiAPD//0iLBQAAAABIizi5/w8AAL4DAAAA6AAAAABIhcAPhIYAAABJicZIiz0AAAAAvkAAAAAx0jHJRTHAQbkAEAAAagD/sygCAADoAAAAAEiDxBBJiUQkMEiFwA+EhAAAAEiLCEiJx0yJ9roBAAAA/5EoAQAAhcAPhJcAAABBicf2g0gCAAACD4TxAAAASIuzUAIAAEiNPQAAAABIjRUAAAAAubIAAADprAAAAEG/vQIA4PaDSAIAAAIPhMgAAABIi7NQAgAASI09AAAAAEiNFQAAAAC5ngAAADHA6AAAAADpogAAAEG/vQIA4PaDSAIAAAIPhIYAAABIi7NQAgAASI09AAAAAEiNFQAAAAC5rAAAAOtESYt8JDBIiwdIjXXQSI1VwEiNTdz/kFgBAACFwHQvQYnH9oNIAgAAAnRASIuzUAIAAEiNPQAAAABIjRUAAAAAubgAAAAxwOgAAAAA6x1Ii0XASYlEJChJiwZMiff/kOACAABJiUQkIEUx/0mLBkyJ9/9QKPaDSAIAAAF1QESJ+EiDxCBbQVxBXkFfXcNIi7NQAgAARYtEJAxFi0wkGEiNPQAAAABIjRUAAAAAuZQAAAAxwOgAAAAA6RP+//9Ii7NQAgAASI09AAAAAEiNFQAAAAC5wQAAAEWJ+DHA6AAAAADrmg==</data>
+                    <key>Identifier</key>
+                    <string>com.apple.driver.AppleEthernetRL</string>
+                    <key>Limit</key>
+                    <integer>580</integer>
+                    <key>Mask</key>
+                    <data>/////////////////////////////////////////////////////////////////////////////////////////////////////////////////wAAAAD//////////////////wAAAAD///////////////////8AAAAA////////////////////////////////////AAAAAP///////////////////////////////////////////////////////////////////////////////////////////////wAAAAD///8AAAAA////////////////////////////////////////////////////AAAAAP///wAAAAD//////////wAAAAD/////////////////////////////////////////////AAAAAP///wAAAAD//////////////////////////////////////////////////////////////////////////////wAAAAD///8AAAAA//////////8AAAAA/////////////////////////////////////////////////////////////////////////////////////////////////////////////////wAAAAD///8AAAAA//////////8AAAAA////////////////////AAAAAP///wAAAAD//////////////wAAAAD//w==</data>
+                    <key>MaxKernel</key>
+                    <string>26.99.99</string>
+                    <key>MinKernel</key>
+                    <string>25.0.0</string>
+                    <key>Replace</key>
+                    <data>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJCQkJCQkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABIx8EA8P//ahNeAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADpPgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHRu6YkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACQkAAAAAAAAAAAAAAAAAAAAACDfdwBdRpBi0QkDEEPr0QkGEg5RchyCUiDfcAAdALroUmLfCQwSIsHagFe/5AwAQAASYt8JDBIiwf/UChJg2QkMABBv7wCAODrlJCQkJCQkJCQkJCQkA==</data>
+                    <key>ReplaceMask</key>
+                    <data>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP///////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/////////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP////////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAAAAD//////////////////////////////////////////////////////////////////////////////////////////////////////////////////w==</data>
+                    <key>Skip</key>
+                    <integer>0</integer>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>x86_64</string>
+                    <key>Base</key>
+                    <string>__ZN15AppleEthernetRL19initializeTallyInfoEv</string>
+                    <key>Comment</key>
+                    <string>laobamac | Validate tally DMA memory and release failed mappings</string>
+                    <key>Count</key>
+                    <integer>1</integer>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Find</key>
+                    <data>VUiJ5UFXQVZTSIPsKEiJ+zHASIlF0EiJRchIiUXYx0XkAQAAAEg5hxgFAAAPhfwAAABIiwUAAAAASIs4usAAAAC5/w8AAL4DAAAA6AAAAABIhcAPhN0AAABJicZIiz0AAAAAvkAAAAAx0jHJRTHAQbkAEAAAagD/sygCAADoAAAAAEiDxBBIiYMYBQAASIXAD4SoAAAASIsISInHTIn2ugEAAAD/kSgBAACFwA+FlAAAAEiLuxgFAABIiwdIjXXYTI19yEiNTeRMifr/kFgBAABJiwdIiYMgBQAASYsGTIn3/5DgAgAASImDKAUAAEUx/0mLBkyJ9/9QKEWF/3QkSIuzUAIAAEiNPQAAAABIjRUAAAAAuQcDAABFifgxwOgAAAAASIPEKFtBXkFfXcNBv9UCAODryUG/vQIA4OvBQb+9AgDg66tBicfrppA=</data>
+                    <key>Identifier</key>
+                    <string>com.apple.driver.AppleEthernetRL</string>
+                    <key>Limit</key>
+                    <integer>332</integer>
+                    <key>Mask</key>
+                    <data>//////////////////////////////////////////////////////////////////////8AAAAA/////////////////////////wAAAAD///////////////////8AAAAA////////////////////////////////////AAAAAP///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wAAAAD///8AAAAA//////////////8AAAAA//////////////////////////////////////////////////////8=</data>
+                    <key>MaxKernel</key>
+                    <string>26.99.99</string>
+                    <key>MinKernel</key>
+                    <string>25.0.0</string>
+                    <key>Replace</key>
+                    <data>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsBAAAAAAAAAAAAAAAAAAAAAABIx8EA8P//ahNeAAAAAAAAAAAAAOQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACeAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACFwHU3g33kAXUxSIF90MAAAAByJ0iDfcgAdCBIi0XISImDIAUAAEmLBkyJ9/+Q4AIAAEiJgygFAADrKEiLuxgFAABIiwdqAV7/kDABAABIi7sYBQAASIsH/1AoSIOjGAUAAABJiwZMiff/UChIg8QoW0FeQV9dw5CQkJA=</data>
+                    <key>ReplaceMask</key>
+                    <data>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP////8AAAAAAAAAAAAAAAAAAAD/////////////AAAAAAAAAAAAAP////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8=</data>
+                    <key>Skip</key>
+                    <integer>0</integer>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>x86_64</string>
+                    <key>Base</key>
+                    <string>__ZN15AppleEthernetRL13readTallyInfoEPvbb</string>
+                    <key>Comment</key>
+                    <string>laobamac | Reject tally reads before DMA storage is ready</string>
+                    <key>Count</key>
+                    <integer>1</integer>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Find</key>
+                    <data>VUiJ5UFXQVZTUEGJz0iJ80mJ/oXSdAxJjb4oAQAA6BtTAQBFhP90DEmNvigBAADoqlMBAEmLtigFAAC6wAAAAEiJ3+gAAAAAMcBIg8QIW0FeQV9dw5A=</data>
+                    <key>Identifier</key>
+                    <string>com.apple.driver.AppleEthernetRL</string>
+                    <key>Limit</key>
+                    <integer>86</integer>
+                    <key>Mask</key>
+                    <data>//////////////////////////////////////////////////////////////////////////////////////////8AAAAA//////////////////8=</data>
+                    <key>MaxKernel</key>
+                    <string>26.99.99</string>
+                    <key>MinKernel</key>
+                    <string>25.0.0</string>
+                    <key>Replace</key>
+                    <data>U0FWQVdIifNBic9MjbcoAQAAuNgCAOBJg74ABAAAAHQrhdJ0CEyJ9+gRUwEARYT/dAhMiffopFMBAEmLtgAEAABIid9qGFnzSKUxwEFfQV5bw5CQkJA=</data>
+                    <key>ReplaceMask</key>
+                    <data>//////////////////////////////////////////////////////////////////////////////////////////////////////////////////8=</data>
+                    <key>Skip</key>
+                    <integer>0</integer>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>x86_64</string>
+                    <key>Base</key>
+                    <string>__Z18re_configure_tallyP8re_softcy</string>
+                    <key>Comment</key>
+                    <string>laobamac | Prevent programming an absent tally DMA address</string>
+                    <key>Count</key>
+                    <integer>1</integer>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Find</key>
+                    <data>VUiJ5UFWU0iJ80mJ/r6E6gAAMdK5AwAAAOgT+P//QYC+nwAAAAB1H0iJ2EjB6CBJi04oiUEUQYC+nwAAAAB1B0mLRiiJWBBbQV5dww==</data>
+                    <key>Identifier</key>
+                    <string>com.apple.driver.AppleEthernetRL</string>
+                    <key>Limit</key>
+                    <integer>76</integer>
+                    <key>Mask</key>
+                    <data>/////////////////////////////////////////////////////////////////////////////////////////////////////w==</data>
+                    <key>MaxKernel</key>
+                    <string>26.99.99</string>
+                    <key>MinKernel</key>
+                    <string>25.0.0</string>
+                    <key>Replace</key>
+                    <data>VUiJ5UFWU0iJ80mJ/kiF9nQsvoTqAAAx0rkDAAAA6A74//9BgL6fAAAAAHURSInYSMHoIEmLTiiJQRSJWRBbQV5dw5CQkJCQkJCQkA==</data>
+                    <key>ReplaceMask</key>
+                    <data>/////////////////////////////////////////////////////////////////////////////////////////////////////w==</data>
+                    <key>Skip</key>
+                    <integer>0</integer>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>x86_64</string>
+                    <key>Base</key>
+                    <string>__ZN15AppleEthernetRL22allocDebuggerResourcesEv</string>
+                    <key>Comment</key>
+                    <string>laobamac | Keep debugger DMA buffers contiguous with or without IOMapper</string>
+                    <key>Count</key>
+                    <integer>1</integer>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Find</key>
+                    <data>VUiJ5UFXQVZTSIPsKEiJ+0Ux9kyJddBMiXXITIl12MdF5AEAAABMObfwBQAAD4TbAQAAi7PcAwAAhfYPhNUBAADB5gu6ABAAAL8BAAAA6AAAAABBv70CAOBIhcAPhLoBAABJicZIiz0AAAAAvkAAAAAx0jHJRTHAQbkAEAAAagD/sygCAADoAAAAAEiDxBBIiYPABQAASIXAD4SAAQAASIsISInHTIn2ugEAAAD/kSgBAACFwA+FTgEAAEiLu8AFAABIiwdIjXXYSI1VyEiNTeT/kFgBAACFwA+FKgEAAEiLRchIiYPIBQAASYsGTIn3/5DgAgAASImD0AUAAEmLBkyJ9/9QKIuzBAMAAMHmC7oAEAAAvwIAAADoAAAAAEiFwA+E9QAAAEmJxkiLPQAAAAC+QAAAADHSMclFMcBBuQAQAABqAP+zKAIAAOgAAAAASIPEEEiJg9gFAABIhcAPhLsAAABIiwhIicdMifa6AQAAAP+RKAEAAIXAD4WJAAAASI112EjHBgAAAABIjU3kxwEBAAAASIu72AUAAEiLB0iNVcj/kFgBAACFwHVcSItFyEiJg+AFAABJiwZMiff/kOACAABIiYPoBQAARTH/SYsGTIn3/1AoSIuzUAIAAEiNPQAAAABIjRUAAAAAuXIAAABFifgxwOgAAAAARIn4SIPEKFtBXkFfXcNBicfrEUG/2AIA4OsJQb/XAgDgRTH2SIu7wAUAAEiF/3QGSIsH/1AoSMeDwAUAAAAAAABIi7vYBQAASIX/dAZIiwf/UChIx4PYBQAAAAAAAE2F9g+FbP///+lw////kA==</data>
+                    <key>Identifier</key>
+                    <string>com.apple.driver.AppleEthernetRL</string>
+                    <key>Limit</key>
+                    <integer>616</integer>
+                    <key>Mask</key>
+                    <data>/////////////////////////////////////////////////////////////////////////////////////////////////////////wAAAAD///////////////////////////8AAAAA////////////////////////////////////AAAAAP//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////AAAAAP///////////////////wAAAAD///////////////////////////////////8AAAAA/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wAAAAD///8AAAAA//////////////8AAAAA/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////w==</data>
+                    <key>MaxKernel</key>
+                    <string>26.99.99</string>
+                    <key>MinKernel</key>
+                    <string>25.0.0</string>
+                    <key>Replace</key>
+                    <data>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL8RAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAvxIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</data>
+                    <key>ReplaceMask</key>
+                    <data>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</data>
+                    <key>Skip</key>
+                    <integer>0</integer>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>x86_64</string>
+                    <key>Base</key>
+                    <string>__ZN15AppleEthernetRL18initializeFirmwareEv</string>
+                    <key>Comment</key>
+                    <string>laobamac | Darwin 27+ | Skip Apple firmware services and keep native MAC initialization</string>
+                    <key>Count</key>
+                    <integer>1</integer>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Find</key>
+                    <data>VUiJ5UFXQVZTSIPsOEiLBQAAAABIiwBIiUXgSINl0ABIg2XIAEiJ+0iDZcAA6MgX/v9Iid/oWhn+//aDcAIAAAF0JEiLs3gCAABIjT0AAAAASI0VAAAAALmlAAAAQYnAMcDoAAAAAPaDvAUAAAEPhMoAAABMjbO9BQAAajRaSInfTIn26Fkb/v+FwA+FrAMAAEiLu0gCAABIiwdIjTUAAAAA/5C4AgAASIXAD4TGAAAASIu7SAIAAEiLB0iNNQAAAAD/kLgCAABIiw0AAAAASIsxSInH6AAAAAAxyUiFwA+VwYmL9AUAAEiLs3gCAABIjT0AAAAASI0VAAAAALm2AAAAMcDoAAAAAIuzuAUAAEiJ3+g5WP7/SIXAD4TQAAAASYnHSInH6JkQAAD2g/IFAAABdF9Mif/oeBIAAOt29oNwAgAAAXQhSIuzeAIAAEiNPQAAAABIjRUAAAAAuagAAAAxwOgAAAAASInf6JgZ/v8xwOnGAgAASIuzeAIAAEiNPQAAAABIjRUAAAAAudUAAADrd0iLs3gCAABIjT0AAAAASI0VAAAAALnCAAAAMcDoAAAAAIO79AUAAAB0CEiJ3+jnAgAATIn/6GFa/v9JiwdMif//UChqNFpIid9Mifbo/hn+/4nBMcCFyQ+FTQIAAEiLs3gCAABIjT0AAAAASI0VAAAAALnTAAAAMcDoAAAAAPaDcAIAAAF0L0iLs3gCAABEi4O9BQAARIuLwQUAAEiNPQAAAABIjRUAAAAAudgAAAAxwOgAAAAAQYM+eHUQg7vBBQAAeHUHxoPxBQAAAQ+2i8kFAABED7aDygUAAEQPt4vLBQAAi4PNBQAAiQQkSI0VAAAAAEyNdcBqGF5MifcxwOgAAAAAQcZGFwD2g3ACAAABdCVIi7N4AgAASI09AAAAAEiNFQAAAABMjUXAud8AAAAxwOgAAAAASIsDSI01AAAAAEiJ30yJ8v+QcAIAAA+2i9EFAABED7aD0gUAAEQPt4vTBQAAi4PVBQAAiQQkSI0VAAAAAGoYXkyJ9zHA6AAAAABBxkYXAPaDcAIAAAF0JUiLs3gCAABIjT0AAAAASI0VAAAAAEyNRcC54wAAADHA6AAAAABIiwNIjTUAAAAASInfTIny/5BwAgAAD7aL2QUAAEQPtoPaBQAARA+3i9sFAACLg90FAACJBCRIjRUAAAAAahheTIn3McDoAAAAAEHGRhcA9oNwAgAAAXQlSIuzeAIAAEiNPQAAAABIjRUAAAAATI1FwLnnAAAAMcDoAAAAAEiLA0iNNQAAAABIjVXASInf/5BwAgAA9oPxBQAAAXQ+SIsDSInfvgCAAAD/kBAMAACFwHQJ9oNwAgAAAnVWSI2zKAYAAEiLA0iJ3/+QIAwAAIXAdAn2g3ACAAACdVxIid/o3hb+/0iNsygGAABIiwNIid//kAgMAABIiw0AAAAASIsJSDtN4HVaSIPEOFtBXkFfXcNIi7N4AgAASI09AAAAAEiNFQAAAAC58AAAAEGJwDHA6AAAAADrhEiLs3gCAABIjT0AAAAASI0VAAAAALn1AAAAQYnAMcDoAAAAAOl7////6AAAAAA=</data>
+                    <key>Identifier</key>
+                    <string>com.apple.driver.AppleEthernetRL</string>
+                    <key>Limit</key>
+                    <integer>1196</integer>
+                    <key>Mask</key>
+                    <data>/////////////////////wAAAAD///////////////////////////////////////////////////////////////////////////8AAAAA////AAAAAP//////////////AAAAAP////////////////////////////////////////////////////////////////////////8AAAAA/////////////////////////////////////wAAAAD///////////8AAAAA/////////wAAAAD///////////////////////////////8AAAAA////AAAAAP//////////AAAAAP///////////////////////////////////////////////////////////////////////////////////////////////wAAAAD///8AAAAA//////////8AAAAA/////////////////////////////////wAAAAD///8AAAAA//////////////////////8AAAAA////AAAAAP//////////AAAAAP////////////////////////////////////////////////////////////////////////////////////////////8AAAAA////AAAAAP//////////AAAAAP///////////////////////////////////////////wAAAAD///8AAAAA//////////8AAAAA////////////////////////////////////////////////////////////////////////////AAAAAP////////////////8AAAAA////////////////////////////////AAAAAP///wAAAAD///////////////8AAAAA////////AAAAAP//////////////////////////////////////////////////////////////AAAAAP///////////wAAAAD///////////////////////////////8AAAAA////AAAAAP///////////////wAAAAD///////8AAAAA//////////////////////////////////////////////////////////////8AAAAA////////////AAAAAP///////////////////////////////wAAAAD///8AAAAA////////////////AAAAAP///////wAAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AAAAA////////////////////////////////////////AAAAAP///wAAAAD//////////////wAAAAD///////////////8AAAAA////AAAAAP//////////////AAAAAP///////wAAAAA=</data>
+                    <key>MaxKernel</key>
+                    <string></string>
+                    <key>MinKernel</key>
+                    <string>27.0.0</string>
+                    <key>Replace</key>
+                    <data>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADHAiIO8BQAA6ckDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</data>
+                    <key>ReplaceMask</key>
+                    <data>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP////////////////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</data>
+                    <key>Skip</key>
+                    <integer>0</integer>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>x86_64</string>
+                    <key>Base</key>
+                    <string>__ZN15AppleEthernetRL22resolveEnabledFeaturesEv</string>
+                    <key>Comment</key>
+                    <string>laobamac | Darwin 27+ | Force AVB off and select legacy 4DW queues</string>
+                    <key>Count</key>
+                    <integer>1</integer>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Find</key>
+                    <data>VUiJ5UFXQVZTULvkAgDgg78QBQAAAA+EhgAAAEmJ/kiNhwwFAACDOAB0d0iLCEiLUAhJiY4gBQAAi0AQQYmGMAUAAEmJligFAABJvwEAAAABAAAATYm+IAUAAEmNtigFAABIjT0AAAAAagRa6AAAAABBg74oBQAAAHQdQYO+MAUAAAB0HUGDviwFAAAAdBNNib4sBQAA6whJg6YsBQAAADHbidhIg8QIW0FeQV9dw5A=</data>
+                    <key>Identifier</key>
+                    <string>com.apple.driver.AppleEthernetRL</string>
+                    <key>Limit</key>
+                    <integer>176</integer>
+                    <key>Mask</key>
+                    <data>//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AAAAA/////wAAAAD///////////////////////////////////////////////////////////////////////////////////8=</data>
+                    <key>MaxKernel</key>
+                    <string></string>
+                    <key>MinKernel</key>
+                    <string>27.0.0</string>
+                    <key>Replace</key>
+                    <data>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMcCJBpAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</data>
+                    <key>ReplaceMask</key>
+                    <data>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</data>
+                    <key>Skip</key>
+                    <integer>0</integer>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>x86_64</string>
+                    <key>Base</key>
+                    <string>__ZN15AppleEthernetRL13initializeAVBEv</string>
+                    <key>Comment</key>
+                    <string>laobamac | Darwin 27+ | Skip PTP delay mapping when AVB queues are disabled</string>
+                    <key>Count</key>
+                    <integer>1</integer>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Find</key>
+                    <data>VUiJ5UFXQVZTUEiJ+0iLBQAAAABIjT0AAAAA/5CIAAAASYnGSIsATIn3/5CIAAAAhMAPhIkAAABJi34QSI01AAAAALoQAQAA6AAAAAC/AQAAAOgAAAAASImDOAUAAEiLCEiJx0yJ9v+RuAEAAEmLBkyJ9/9QKIO7LAUAAAB0LUyNsygBAABFMf9FD7b/TIn3RIn+uh8AAADoxkgBAEH+x0EPtsc5gywFAAB33UiJ3+gWAAAAMcBIg8QIW0FeQV9dw0yJ9+hH6gEAkA==</data>
+                    <key>Identifier</key>
+                    <string>com.apple.driver.AppleEthernetRL</string>
+                    <key>Limit</key>
+                    <integer>202</integer>
+                    <key>Mask</key>
+                    <data>/////////////////////wAAAAD///8AAAAA////////////////////////////////////////////////AAAAAP///////wAAAAD///////8AAAAA/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////w==</data>
+                    <key>MaxKernel</key>
+                    <string></string>
+                    <key>MinKernel</key>
+                    <string>27.0.0</string>
+                    <key>Replace</key>
+                    <data>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</data>
+                    <key>ReplaceMask</key>
+                    <data>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</data>
+                    <key>Skip</key>
+                    <integer>0</integer>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>x86_64</string>
+                    <key>Base</key>
+                    <string>__ZN15AppleEthernetRL5startEP9IOService</string>
+                    <key>Comment</key>
+                    <string>laobamac | Darwin 27+ | Select legacy interrupts for RTL8125 A/B/BP/D and RTL8126A</string>
+                    <key>Count</key>
+                    <integer>1</integer>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Find</key>
+                    <data>VUiJ5UFXQVZBVUFUU0iD7BhJifZIiftIiwUAAAAA/5DQBQAAhMAPhMQAAAD2g3ACAAABD4UcBQAASIu7SAIAAEiLB74BAAAA/5DICAAASIu7SAIAAEiLB74AgAAA/5BICQAAhMB0FUiLu0gCAABIiwe+AwAAAP+QUAkAAEiLu0gCAABIiwdFMf++GAAAADHS/5AICQAASImDaAIAAEiFwA+E3AIAAEiLu0gCAADoAAAAAEiJg1ACAAD2g3ACAAABD4W/BAAASIu7aAIAAEiLB/+QGAEAAEiJg1ABAABIid/osRgCAIXAdA9BicQxyesgRTH/6YoCAABIid/oODsCAEUx5IXAD4SJAgAAMclBicRMjbsoAQAAgIswAQAACPaDvAUAAAG4AAABDLoAAAEAD0XQiZOMAgAAhMl0F0yJ/+hQOwEAQby8AgDghcB0Dun5AQAARYXkD4XwAQAAg7soBQAAAHQWg7swBQAAAHQNTIn/vgIAAADoe3YBAEiLA0iJ3/+QYAwAAEiJ3+jhKwAAhcAPhbIBAABMif/oeD0BAEyNZdBBxwQkAAAAAEiNPQAAAABMiea6BAAAAOgAAAAAQYsEJIP4AnRRhcB1K4C7LQIAAAB0IkiLu0gCAABIiwe+AAACALoGAAAAuQYAAABFMcD/kGAJAABIi7tIAgAASIsHvgAAAQC6AQAAALkBAAAARTHA/5BgCQAASIu7SAIAAEiLB74BAAAAugEAAAC5AQAAAEUxwP+QYAkAAEiJ3+j1LAIAhcAPhf4AAABIjVXUxwIAAAAASIu7SAIAAEiLBzH2/5AIBwAAhcB1eEyNZdRBvQEAAACLRdQPuuAQc0JFjU3/D7rgEbkACAAAugEAAAAPQ8oJi5gBAABIi7N4AgAAiQQkSI09AAAAAEiNFQAAAAC5gAEAAEUxwDHA6AAAAACDfdAAdR1Ii7tIAgAASIsHRInuTIni/5AIBwAAQf/FhcB0kkiLu0gCAAC+AQAAAOgAAAAA9oNwAgAAAQ+FmAIAAEyJ/+jDiQAATIn/6PyQAABMif/omlcBAEyJ/0yJ/ujpOAEAZseDLgEAANwFSInf6KMCAACFwHUQSInf6HdQAACFwA+EjgAAAEGJxEiLA0iJ30yJ9v+QyAUAAEUx/0iLs3gCAABIjT0AAAAASI0VAAAAALkOAQAARYngMcDoAAAAAESJ+EiDxBhbQVxBXUFeQV9dw0i4EAAAAAEAAABIiYMQBQAAx4MMBQAACAAAAEi4CAAAAAwAAABIiYMYBQAASInf6N7sAQBIid/oWkUAALEB6Tn9//9IiwNIid8x9v+QsAUAAEiJ3+hNAwAASInf6CUhAgBIjT0AAAAAMfYx0ugAAAAAhcB0TseD5AcAAOgDAADHg+wHAAAKAAAASI01AAAAAEiJ3+gAAAAASImD+AcAAEiFwHQfSIsDSInf/5CIBgAASIuz+AcAAEiLCEiJx/+RQAEAAEiNNQAAAABIid/oAAAAAEiJgwAIAABIhcB0F0iLi1gCAABIi3kwSIsPSInG/5FAAQAASI01AAAAAEiJ3+gAAAAASImDCAgAAEiFwHQXSIuLWAIAAEiLeTBIiw9Iicb/kUABAABIx4NYBgAAAAAAAEiNNQAAAABIid/oAAAAAEiJg2AGAABIhcB0H0iLA0iJ3/+QiAYAAEiLs2AGAABIiwhIicf/kUABAABIg7sACAAAAHQfSIO7CAgAAAB0FUiDu2AGAAAAdAtFMeRBtwHpNf7//0iLs3gCAABIjT0AAAAASI0VAAAAALkFAQAAMcDoAAAAAEG8vAIA4On3/f//TIuDSAIAAEiLs3gCAABIjT0AAAAASI0VAAAAALl3AAAATYnxMcDoAAAAAOm0+v//SI2zaAIAAEiJ3+go8AEA6S37//9Iid/ojvABAOlb/f//</data>
+                    <key>Identifier</key>
+                    <string>com.apple.driver.AppleEthernetRL</string>
+                    <key>Limit</key>
+                    <integer>1446</integer>
+                    <key>Mask</key>
+                    <data>//////////////////////////////////8AAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////AAAAAP///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wAAAAD///////////8AAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////AAAAAP///wAAAAD//////////////wAAAAD///////////////////////////////////////////////////////////////8AAAAA//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AAAAA////AAAAAP//////////////AAAAAP////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AAAAA//////8AAAAA////////////////////////////////////AAAAAP////8AAAAA/////////////////////////////////////////////////////////////wAAAAD/////AAAAAP//////////////////////////////////////////////////AAAAAP////8AAAAA/////////////////////////////////////////////////////////////////wAAAAD/////AAAAAP////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AAAAA////AAAAAP//////////AAAAAP////////////////////////////////////8AAAAA////AAAAAP//////////////AAAAAP//////////////////////////////////////////////////</data>
+                    <key>MaxKernel</key>
+                    <string></string>
+                    <key>MinKernel</key>
+                    <string>27.0.0</string>
+                    <key>Replace</key>
+                    <data>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEyNZdCDZdAAioNhAQAALFA8B3YGLAo8AncHxoMtAgAAADHAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</data>
+                    <key>ReplaceMask</key>
+                    <data>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP///////////////////////////////////////////////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</data>
+                    <key>Skip</key>
+                    <integer>0</integer>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>x86_64</string>
+                    <key>Base</key>
+                    <string>__ZN15AppleEthernetRL20initializeIrqMappingEv</string>
+                    <key>Comment</key>
+                    <string>laobamac | Darwin 27+ | Preserve IRQ resources and bypass remapper in legacy mode</string>
+                    <key>Count</key>
+                    <integer>1</integer>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Find</key>
+                    <data>VUiJ5UFXQVZBVFNIiftIjT0AAAAAvlABAADoAAAAAEiJg1gCAABBvr0CAOBIhcAPhK0CAABED7aDYQEAAEGNQJyD+AIPg4oAAABIuAAAACABAAAASImD6AYAAEi4AAEAAAAAAQBIiYPwBgAASLgBAAAAAAACAEiJg/gGAABIuAIAAAAAAAEASImDAAcAAEUx5EiNFQAAAABqKFhFMcBFMclIi4tYAgAASWv5OElr8ShIAc9Ig8cISAHWSInB86RJ/8FJg8A4SYH4UAEAAHXS6bgAAABBg/hYD4WHAAAASLgAAAAgAQAAAEiJg+gGAABIuAAAAAgAAAEASImD8AYAAEi4AQAAAAAAAgBIiYP4BgAASLgCAAAAAAABAEiJgwAHAABFMeRIjRUAAAAAaihYRTHARTHJSIuLWAIAAElr+ThJa/EoSAHPSIPHCEgB1kiJwfOkSf/BSYPAOEmB+FABAAB10usnSIuzeAIAAEiNPQAAAABIjRUAAAAAuZYAAAAxwOgAAAAAQbzHAgDgi4PsBgAAC4PwBgAAC4P0BgAAC4P8BgAADQAAAICJgwgHAACLg/gGAAALgwAHAAALgwQHAACJgwwHAABIiwNIid//kIgGAABJicdIiwBMif//UCBIi4NYAgAATIl4MEmLB0yJ//9QIEiLg1gCAABMibhIAQAA6AAAAABJicdIiwBMif//UCBIi4NYAgAATIl4aEmLB0yJ//9QIEiLg1gCAABMibigAAAASYsHTIn//1AgSIuDWAIAAEyJuNgAAABJiwdMif//UCBIi4NYAgAATIm4EAEAAEmLB0yJ//9QKEiNBQAAAABIiYOwBwAASI0FAAAAAEiJg7gHAABIjQUAAAAASImDwAcAAEiNBQAAAABIiYPIBwAASI0FAAAAAEiJg9AHAABIjQUAAAAASImD2AcAAEiLu0gCAADoocT//0iJg6gHAABIhcB0C0iJ3+iNBQAARYnmRInwW0FcQV5BX13D</data>
+                    <key>Identifier</key>
+                    <string>com.apple.driver.AppleEthernetRL</string>
+                    <key>Limit</key>
+                    <integer>750</integer>
+                    <key>Mask</key>
+                    <data>//////////////////////8AAAAA////////AAAAAP///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wAAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AAAAA/////////////////////////////////////////////////////////////////////////////////////////wAAAAD///8AAAAA//////////8AAAAA/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wAAAAD//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wAAAAD/////////////AAAAAP////////////8AAAAA/////////////wAAAAD/////////////AAAAAP////////////8AAAAA////////////////////////////////////////////////////////////////////////</data>
+                    <key>MaxKernel</key>
+                    <string></string>
+                    <key>MinKernel</key>
+                    <string>27.0.0</string>
+                    <key>Replace</key>
+                    <data>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARTHk6yKQkJCAuy0CAAAAD4RlAQAASIu7SAIAAOjmxf//6UABAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOmp/v//kJCQkJCQkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</data>
+                    <key>ReplaceMask</key>
+                    <data>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////////////////////////////////////////////////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP///////////////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</data>
+                    <key>Skip</key>
+                    <integer>0</integer>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>x86_64</string>
+                    <key>Base</key>
+                    <string>__Z27re_get_platform_mac_addressP8re_softcPh</string>
+                    <key>Comment</key>
+                    <string>laobamac | Darwin 27+ | Preserve hardware MAC when platform MAC is absent</string>
+                    <key>Count</key>
+                    <integer>1</integer>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Find</key>
+                    <data>hcB0PkGLBg==</data>
+                    <key>Identifier</key>
+                    <string>com.apple.driver.AppleEthernetRL</string>
+                    <key>Limit</key>
+                    <integer>201</integer>
+                    <key>Mask</key>
+                    <data></data>
+                    <key>MaxKernel</key>
+                    <string></string>
+                    <key>MinKernel</key>
+                    <string>27.0.0</string>
+                    <key>Replace</key>
+                    <data>hcB0M0GLBg==</data>
+                    <key>ReplaceMask</key>
+                    <data></data>
+                    <key>Skip</key>
+                    <integer>0</integer>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>x86_64</string>
+                    <key>Base</key>
+                    <string>__ZNK15AppleEthernetRL14newModelStringEv</string>
+                    <key>Comment</key>
+                    <string>laobamac | Darwin 27+ | Resolve RTL8125 RTL8126 RTL8127 models from actual PCI device ID</string>
+                    <key>Count</key>
+                    <integer>1</integer>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Find</key>
+                    <data>D7eHagEAADHbPSaBAAB/Fz13dwAAdCc9JYEAAHU4SI09AAAAAOsnPSeBAAB0GT2IiAAAdSFIjT0AAAAA6xBIjT0AAAAA6wdIjT0AAAAA6AAAAABIicM=</data>
+                    <key>Identifier</key>
+                    <string>com.apple.driver.AppleEthernetRL</string>
+                    <key>Limit</key>
+                    <integer>366</integer>
+                    <key>Mask</key>
+                    <data>////////////////////////////////////////////AAAAAP////////////////////////8AAAAA//////8AAAAA//////8AAAAA/wAAAAD///8=</data>
+                    <key>MaxKernel</key>
+                    <string></string>
+                    <key>MinKernel</key>
+                    <string>27.0.0</string>
+                    <key>Replace</key>
+                    <data>AAAAZgAAAAAAAAAAAAAAAAAmgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</data>
+                    <key>ReplaceMask</key>
+                    <data>AAAA/wAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</data>
+                    <key>Skip</key>
+                    <integer>0</integer>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>x86_64</string>
+                    <key>Base</key>
+                    <string></string>
+                    <key>Comment</key>
+                    <string>laobamac | Darwin 27+ | Provide the RTL8126 5 GbE model string</string>
+                    <key>Count</key>
+                    <integer>1</integer>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Find</key>
+                    <data>ODEyNUNQQSAoMi41IEdiRSkA</data>
+                    <key>Identifier</key>
+                    <string>com.apple.driver.AppleEthernetRL</string>
+                    <key>Limit</key>
+                    <integer>0</integer>
+                    <key>Mask</key>
+                    <data></data>
+                    <key>MaxKernel</key>
+                    <string></string>
+                    <key>MinKernel</key>
+                    <string>27.0.0</string>
+                    <key>Replace</key>
+                    <data>ODEyNiAoNSBHYkUpAAAAAAAA</data>
+                    <key>ReplaceMask</key>
+                    <data></data>
+                    <key>Skip</key>
+                    <integer>0</integer>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>x86_64</string>
+                    <key>Base</key>
+                    <string>__ZN15AppleEthernetRL25dequeueRx4DWLegacyPacketsEP26IOSkywalkRxSubmissionQueuePKP15IOSkywalkPacketjRN6__rl__5EthRQE</string>
+                    <key>Comment</key>
+                    <string>laobamac | Darwin 27+ | Use mapped or physical DMA segments with 80-byte ring structures</string>
+                    <key>Count</key>
+                    <integer>1</integer>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Find</key>
+                    <data>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</data>
+                    <key>Identifier</key>
+                    <string>com.apple.driver.AppleEthernetRL</string>
+                    <key>Limit</key>
+                    <integer>2358</integer>
+                    <key>Mask</key>
+                    <data>//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AAAAA//////////8AAAAA/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wAAAAD///////8AAAAA/////////////wAAAAD///////////////////////////////////////////////////////8AAAAA////AAAAAP//////////////AAAAAP////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AAAAA//////////8AAAAA//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AAAAA////////AAAAAP////////////8AAAAA////////////////////////////////////////////////////////AAAAAP///wAAAAD//////////////wAAAAD//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wAAAAD///8AAAAA//////////////////8AAAAA//////////////////////////////////////////////////////8AAAAA/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wAAAAD///8AAAAA////////////////////AAAAAP////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AAAAA//////////8AAAAA/////////////////////////////////////////////////////////////wAAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AAAAA////AAAAAP///////////////////////wAAAAD/////////////////////////AAAAAP///wAAAAD/////////////////////////AAAAAP///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wAAAAD///8AAAAA//////////////////////////////8AAAAA//////////////////////////////////8AAAAA////AAAAAP///////////////////////wAAAAD/////////////</data>
+                    <key>MaxKernel</key>
+                    <string></string>
+                    <key>MinKernel</key>
+                    <string>27.0.0</string>
+                    <key>Replace</key>
+                    <data>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i7QkCAIAAEiJNMJBi3YEA7QkBAIAAEEjdhBJi1QkCGaJNEL/wEEjRhBBiUQkFEyJ90iJ5ouUJAQCAADo2Pn///+D6AcAAEH/x+mc/v//RYX/dBwPrviAu8kBAAAAdRBIi4NQAQAAZseAkAAAAAEARIn4SIHEKAIAAEFfQV5BXUFcW13DkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkFNBVEFVQVZBic5Bi0AcSGvAUEyNjAcgAwAARYsRRYtZEEWLYBAxwEQ58HNLRTtgFHRFQYtJCEQp0UQh2XQ5SYtwCEIPtxxmQYndRSnVRSHddCVEOelyIEmLMEqLPOZIiTzCSscE5gAAAABBidpB/8RFIdz/wOuwRYkRRYlgEEFeQV1BXFvDkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQ</data>
+                    <key>ReplaceMask</key>
+                    <data>//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////AAAAAAD/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////</data>
+                    <key>Skip</key>
+                    <integer>0</integer>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>x86_64</string>
+                    <key>Base</key>
+                    <string>__ZN15AppleEthernetRL14startInterfaceEv</string>
+                    <key>Comment</key>
+                    <string>laobamac | Darwin 27+ | Bound packet DMA segments to 4 KiB and retain IOMapper</string>
+                    <key>Count</key>
+                    <integer>1</integer>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Find</key>
+                    <data>VUiJ5UFXQVZBVUFUU0iB7AgBAABJif1IiwUAAAAASIsASIlF0EiNPQAAAADoAAAAAEiFwA+EEQUAAEmJxrsBAAAAuTABAABMie9Iica6AQAAAOgAAAAAQYuFjAEAAEGJRkhBx0YUGgAAALggAAAAQYlGKEGJhVgBAABNifBJgcAIAQAAQYuFKAEAAEGJhggBAABBD7eFLAEAAGZBiYYMAQAASYu1eAIAAEiNPQAAAABIjRUAAAAATI0NAAAAAEUx5LkkAQAAMcDoAAAAAEiNhej+//9MiWAITIlgGEyJYChMiWAgTIlgEEiLDQAAAABIiQjGQAhAx0AYAAAAAIlYKEmLjVACAABIiUgw</data>
+                    <key>Identifier</key>
+                    <string>com.apple.driver.AppleEthernetRL</string>
+                    <key>Limit</key>
+                    <integer>267</integer>
+                    <key>Mask</key>
+                    <data>//////////////////////////////////8AAAAA/////////////wAAAAD/AAAAAP////////////////////////////////////////////8AAAAA/////////////////////////////////////////////////////////////////////////////////////////////////////////////////wAAAAD///8AAAAA////AAAAAP//////////////AAAAAP///////////////////////////////////////wAAAAD/////////////////////////////////////</data>
+                    <key>MaxKernel</key>
+                    <string></string>
+                    <key>MinKernel</key>
+                    <string>27.0.0</string>
+                    <key>Replace</key>
+                    <data>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAx0AQABAAAAAAAAAAAAAAAAAAAAAA</data>
+                    <key>ReplaceMask</key>
+                    <data>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/////////wAAAAAAAAAAAAAAAAAA</data>
+                    <key>Skip</key>
+                    <integer>0</integer>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>x86_64</string>
+                    <key>Base</key>
+                    <string>__ZN15AppleEthernetRL9allocRingERN6__rl__7EthRingE</string>
+                    <key>Comment</key>
+                    <string>laobamac | Darwin 27+ | Allocate contiguous descriptor rings and reject incomplete DMA ranges</string>
+                    <key>Count</key>
+                    <integer>1</integer>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Find</key>
+                    <data>VUiJ5UFXQVZBVFNIg+wgSYn0SIn7SMdF0AAAAADHRdwBAAAA9odwAgAAAQ+FvQEAADHASIlFyEiJRcBBi1QkGEEPr1QkDIHC/w8AAIHiAPD//0iLBQAAAABIizi5/w8AAL4DAAAA6AAAAABIhcAPhIYAAABJicZIiz0AAAAAvkAAAAAx0jHJRTHAQbkAEAAAagD/s1ACAADoAAAAAEiDxBBJiUQkMEiFwA+EhAAAAEiLCEiJx0yJ9roBAAAA/5EoAQAAhcAPhJcAAABBicf2g3ACAAACD4TxAAAASIuzeAIAAEiNPQAAAABIjRUAAAAAufAAAADprAAAAEG/vQIA4PaDcAIAAAIPhMgAAABIi7N4AgAASI09AAAAAEiNFQAAAAC53AAAADHA6AAAAADpogAAAEG/vQIA4PaDcAIAAAIPhIYAAABIi7N4AgAASI09AAAAAEiNFQAAAAC56gAAAOtESYt8JDBIiwdIjXXQSI1VwEiNTdz/kFgBAACFwHQvQYnH9oNwAgAAAnRASIuzeAIAAEiNPQAAAABIjRUAAAAAufYAAAAxwOgAAAAA6x1Ii0XASYlEJChJiwZMiff/kOACAABJiUQkIEUx/0mLBkyJ9/9QKPaDcAIAAAF1QESJ+EiDxCBbQVxBXkFfXcNIi7N4AgAARYtEJAxFi0wkGEiNPQAAAABIjRUAAAAAudIAAAAxwOgAAAAA6RP+//9Ii7N4AgAASI09AAAAAEiNFQAAAAC5/wAAAEWJ+DHA6AAAAADrmg==</data>
+                    <key>Identifier</key>
+                    <string>com.apple.driver.AppleEthernetRL</string>
+                    <key>Limit</key>
+                    <integer>580</integer>
+                    <key>Mask</key>
+                    <data>/////////////////////////////////////////////////////////////////////////////////////////////////////////////////wAAAAD//////////////////wAAAAD///////////////////8AAAAA////////////////////////////////////AAAAAP///////////////////////////////////////////////////////////////////////////////////////////////wAAAAD///8AAAAA////////////////////////////////////////////////////AAAAAP///wAAAAD//////////wAAAAD/////////////////////////////////////////////AAAAAP///wAAAAD//////////////////////////////////////////////////////////////////////////////wAAAAD///8AAAAA//////////8AAAAA/////////////////////////////////////////////////////////////////////////////////////////////////////////////////wAAAAD///8AAAAA//////////8AAAAA////////////////////AAAAAP///wAAAAD//////////////wAAAAD//w==</data>
+                    <key>MaxKernel</key>
+                    <string></string>
+                    <key>MinKernel</key>
+                    <string>27.0.0</string>
+                    <key>Replace</key>
+                    <data>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJCQkJCQkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABIx8EA8P//ahNeAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADpPgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHRu6YkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACQkAAAAAAAAAAAAAAAAAAAAACDfdwBdRpBi0QkDEEPr0QkGEg5RchyCUiDfcAAdALroUmLfCQwSIsHagFe/5AwAQAASYt8JDBIiwf/UChJg2QkMABBv7wCAODrlJCQkJCQkJCQkJCQkA==</data>
+                    <key>ReplaceMask</key>
+                    <data>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP///////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/////////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP////////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAAAAD//////////////////////////////////////////////////////////////////////////////////////////////////////////////////w==</data>
+                    <key>Skip</key>
+                    <integer>0</integer>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>x86_64</string>
+                    <key>Base</key>
+                    <string>__ZN15AppleEthernetRL19initializeTallyInfoEv</string>
+                    <key>Comment</key>
+                    <string>laobamac | Darwin 27+ | Validate tally DMA memory and release failed mappings</string>
+                    <key>Count</key>
+                    <integer>1</integer>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Find</key>
+                    <data>VUiJ5UFXQVZTSIPsKEiJ+zHASIlF0EiJRchIiUXYx0XkAQAAAEg5h3AFAAAPhf8AAABIiwUAAAAASIs4usAAAAC5/w8AAL4DAAAA6AAAAABIhcAPhOAAAABJicZIiz0AAAAAvkAAAAAx0jHJRTHAQbkAEAAAagD/s1ACAADoAAAAAEiDxBBIiYNwBQAASIXAD4SrAAAASIsISInHTIn2ugEAAAD/kSgBAACFwHV+SIu7cAUAAEiLB0iNddhIjVXISI1N5P+QWAEAAIXAdV5Ii0XISImDeAUAAEmLBkyJ9/+Q4AIAAEiJg4AFAABFMf9JiwZMiff/UChFhf90JEiLs3gCAABIjT0AAAAASI0VAAAAALlxAwAARYn4McDoAAAAAEiDxChbQV5BX13DQYnH675Bv9UCAODrxEG/vQIA4Ou8Qb+9AgDg66aQ</data>
+                    <key>Identifier</key>
+                    <string>com.apple.driver.AppleEthernetRL</string>
+                    <key>Limit</key>
+                    <integer>330</integer>
+                    <key>Mask</key>
+                    <data>//////////////////////////////////////////////////////////////////////8AAAAA/////////////////////////wAAAAD///////////////////8AAAAA////////////////////////////////////AAAAAP////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AAAAA////AAAAAP//////////////AAAAAP//////////////////////////////////////////////////////</data>
+                    <key>MaxKernel</key>
+                    <string></string>
+                    <key>MinKernel</key>
+                    <string>27.0.0</string>
+                    <key>Replace</key>
+                    <data>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQBAAAAAAAAAAAAAAAAAAAAAABIx8EA8P//ahNeAAAAAAAAAAAAAN0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACXAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHVXAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIXAdTeDfeQBdTFIgX3QwAAAAHInSIN9yAB0IEiLRchIiYN4BQAASYsGTIn3/5DgAgAASImDgAUAAOsoSIu7cAUAAEiLB2oBXv+QMAEAAEiLu3AFAABIiwf/UChIg6NwBQAAAEmLBkyJ9/9QKEiDxChbQV5BX13DkJCQkJCQkJCQ</data>
+                    <key>ReplaceMask</key>
+                    <data>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP////8AAAAAAAAAAAAAAAAAAAD/////////////AAAAAAAAAAAAAP////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////</data>
+                    <key>Skip</key>
+                    <integer>0</integer>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>x86_64</string>
+                    <key>Base</key>
+                    <string>__Z18re_configure_tallyP8re_softcy</string>
+                    <key>Comment</key>
+                    <string>laobamac | Darwin 27+ | Prevent programming an absent tally DMA address</string>
+                    <key>Count</key>
+                    <integer>1</integer>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Find</key>
+                    <data>VUiJ5UFWU0iJ80mJ/r6E6gAAMdK5AwAAAOgT+P//QYC+oQAAAAB1H0iJ2EjB6CBJi04oiUEUQYC+oQAAAAB1B0mLRiiJWBBbQV5dww==</data>
+                    <key>Identifier</key>
+                    <string>com.apple.driver.AppleEthernetRL</string>
+                    <key>Limit</key>
+                    <integer>76</integer>
+                    <key>Mask</key>
+                    <data>/////////////////////////////////////////////////////////////////////////////////////////////////////w==</data>
+                    <key>MaxKernel</key>
+                    <string></string>
+                    <key>MinKernel</key>
+                    <string>27.0.0</string>
+                    <key>Replace</key>
+                    <data>VUiJ5UFWU0iJ80mJ/kiF9nQsvoTqAAAx0rkDAAAA6A74//9BgL6hAAAAAHURSInYSMHoIEmLTiiJQRSJWRBbQV5dw5CQkJCQkJCQkA==</data>
+                    <key>ReplaceMask</key>
+                    <data>/////////////////////////////////////////////////////////////////////////////////////////////////////w==</data>
+                    <key>Skip</key>
+                    <integer>0</integer>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>x86_64</string>
+                    <key>Base</key>
+                    <string>__ZN15AppleEthernetRL22allocDebuggerResourcesEv</string>
+                    <key>Comment</key>
+                    <string>laobamac | Darwin 27+ | Keep debugger DMA buffers contiguous with or without IOMapper</string>
+                    <key>Count</key>
+                    <integer>1</integer>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Find</key>
+                    <data>VUiJ5UFXQVZTSIPsKEiJ+0Ux9kyJddBMiXXITIl12MdF5AEAAABMObeoBgAAD4TbAQAAi7McBAAAhfYPhNUBAADB5gu6ABAAAL8BAAAA6AAAAABBv70CAOBIhcAPhLoBAABJicZIiz0AAAAAvkAAAAAx0jHJRTHAQbkAEAAAagD/s1ACAADoAAAAAEiDxBBIiYN4BgAASIXAD4SAAQAASIsISInHTIn2ugEAAAD/kSgBAACFwA+FTgEAAEiLu3gGAABIiwdIjXXYSI1VyEiNTeT/kFgBAACFwA+FKgEAAEiLRchIiYOABgAASYsGTIn3/5DgAgAASImDiAYAAEmLBkyJ9/9QKIuzLAMAAMHmC7oAEAAAvwIAAADoAAAAAEiFwA+E9QAAAEmJxkiLPQAAAAC+QAAAADHSMclFMcBBuQAQAABqAP+zUAIAAOgAAAAASIPEEEiJg5AGAABIhcAPhLsAAABIiwhIicdMifa6AQAAAP+RKAEAAIXAD4WJAAAASI112EjHBgAAAABIjU3kxwEBAAAASIu7kAYAAEiLB0iNVcj/kFgBAACFwHVcSItFyEiJg5gGAABJiwZMiff/kOACAABIiYOgBgAARTH/SYsGTIn3/1AoSIuzeAIAAEiNPQAAAABIjRUAAAAAuXIAAABFifgxwOgAAAAARIn4SIPEKFtBXkFfXcNBicfrEUG/2AIA4OsJQb/XAgDgRTH2SIu7eAYAAEiF/3QGSIsH/1AoSMeDeAYAAAAAAABIi7uQBgAASIX/dAZIiwf/UChIx4OQBgAAAAAAAE2F9g+FbP///+lw////kA==</data>
+                    <key>Identifier</key>
+                    <string>com.apple.driver.AppleEthernetRL</string>
+                    <key>Limit</key>
+                    <integer>616</integer>
+                    <key>Mask</key>
+                    <data>/////////////////////////////////////////////////////////////////////////////////////////////////////////wAAAAD///////////////////////////8AAAAA////////////////////////////////////AAAAAP//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////AAAAAP///////////////////wAAAAD///////////////////////////////////8AAAAA/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wAAAAD///8AAAAA//////////////8AAAAA/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////w==</data>
+                    <key>MaxKernel</key>
+                    <string></string>
+                    <key>MinKernel</key>
+                    <string>27.0.0</string>
+                    <key>Replace</key>
+                    <data>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL8RAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAvxIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</data>
+                    <key>ReplaceMask</key>
+                    <data>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</data>
                     <key>Skip</key>
                     <integer>0</integer>
                 </dict>
@@ -1723,6 +2683,8 @@
                 <key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
                 <array>
                     <string>boot-args</string>
+                    <string>bluetoothExternalDongleFailed</string>
+                    <string>bluetoothInternalControllerInfo</string>
                 </array>
             </dict>
             <key>LegacyOverwrite</key>
@@ -1854,6 +2816,8 @@
                     <string></string>
                     <key>Enabled</key>
                     <true/>
+                    <key>HideVerbose</key>
+                    <false/>
                     <key>LoadEarly</key>
                     <false/>
                     <key>Path</key>
@@ -1866,6 +2830,8 @@
                     <string></string>
                     <key>Enabled</key>
                     <true/>
+                    <key>HideVerbose</key>
+                    <false/>
                     <key>LoadEarly</key>
                     <false/>
                     <key>Path</key>
@@ -1878,6 +2844,8 @@
                     <string></string>
                     <key>Enabled</key>
                     <true/>
+                    <key>HideVerbose</key>
+                    <false/>
                     <key>LoadEarly</key>
                     <false/>
                     <key>Path</key>
@@ -1890,6 +2858,8 @@
                     <string></string>
                     <key>Enabled</key>
                     <true/>
+                    <key>HideVerbose</key>
+                    <false/>
                     <key>LoadEarly</key>
                     <false/>
                     <key>Path</key>
@@ -1902,6 +2872,8 @@
                     <string></string>
                     <key>Enabled</key>
                     <true/>
+                    <key>HideVerbose</key>
+                    <false/>
                     <key>LoadEarly</key>
                     <false/>
                     <key>Path</key>
